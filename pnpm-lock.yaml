@@ -17,6 +17,9 @@ importers:
       astro-font:
         specifier: ^0.0.72
         version: 0.0.72
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
     devDependencies:
       '@astrojs/mdx':
         specifier: 2.0.3
@@ -3162,8 +3165,8 @@ packages:
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
 
-  dotenv@16.3.1:
-    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
 
   downshift@6.1.12:
@@ -8579,7 +8582,7 @@ snapshots:
       cli-spinner: 0.2.10
       clipanion: 3.2.1(typanion@3.13.0)
       cors: 2.8.5
-      dotenv: 16.3.1
+      dotenv: 16.4.5
       esbuild: 0.18.20
       express: 4.18.2
       fast-glob: 3.3.1
@@ -10999,7 +11002,7 @@ snapshots:
       no-case: 3.0.4
       tslib: 2.6.2
 
-  dotenv@16.3.1: {}
+  dotenv@16.4.5: {}
 
   downshift@6.1.12(react@17.0.2):
     dependencies:

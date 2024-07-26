@@ -3,10 +3,15 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import { remarkReadingTime } from './src/utils/readTime.ts'
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://template-blog-alpha.vercel.app/', // Write here your website url
+	site: 'https://unsp.vercel.app/', // Write here your website url
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,

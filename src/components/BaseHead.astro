@@ -27,7 +27,6 @@ import { AstroFont } from 'astro-font'
 <meta name='viewport' content='width=device-width,initial-scale=1' />
 <meta name='generator' content={Astro.generator} />
 
-
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-261EF86MNJ"></script>
 <script>
@@ -38,12 +37,17 @@ import { AstroFont } from 'astro-font'
   gtag('config', 'G-261EF86MNJ');
 </script>
 
+
+
+
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
 <link rel="icon" href="/Favicon.svg" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<link rel="stylesheet" href="src/styles/customstyles.css">
 
 <!-- ViewTransitions  -->
 <ViewTransitions />

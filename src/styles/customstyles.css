@@ -28,3 +28,33 @@ body::-webkit-scrollbar-thumb {
 }
 
 /*  */
+
+@media screen and (max-width:480px) {
+  .legals {
+    font-size: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .copy {
+    font-size: 15px;
+    text-align: center;
+  }
+  .main-title {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width:480px) and (max-width:768px) {
+  .legals {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .copy {
+    text-align: center;
+  }
+  .main-title {
+    text-align: center;
+  }
+}

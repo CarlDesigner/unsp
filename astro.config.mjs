@@ -5,7 +5,6 @@ import tailwind from '@astrojs/tailwind';
 import { remarkReadingTime } from './src/utils/readTime.ts';
 import dotenv from 'dotenv';
 import icon from "astro-icon";
-dotenv.config();
 
 
 // https://astro.build/config
@@ -30,5 +29,10 @@ export default defineConfig({
       wrap: true
     },
     drafts: true
-  }), sitemap(), tailwind(), icon()]
+  }), sitemap(), tailwind(), icon()],
+
+  // Desactiva la barra de herramientas de Astro DevTools
+  devToolbar: {
+    enabled: false
+  }
 });

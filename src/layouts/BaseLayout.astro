@@ -6,7 +6,7 @@ import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
 import EditBlog from '@/components/editBlog'
-/* import CookieConsent from '@/components/CookieConsent' */
+import CookieConsent from '@/components/CookieConsent'
 const { title, description, image, articleDate } = Astro.props
 ---
 
@@ -24,7 +24,7 @@ const { title, description, image, articleDate } = Astro.props
 			<Header />
 			<slot />
 			<Footer />
-			<!-- <CookieConsent /> -->
+			<CookieConsent />
 		</main>
 		<TwSizeIndicator />
 		<EditBlog />

@@ -1,16 +1,18 @@
 import type { CookieConsentConfig } from 'vanilla-cookieconsent'
-
+document.documentElement.classList.add('cc--darkmode');
 export const config: CookieConsentConfig = {
 	guiOptions: {
 		consentModal: {
-			layout: 'box inline',
-			position: 'bottom left'
+			layout: "bar inline",
+            position: "bottom",
+            equalWeightButtons: false,
+            flipButtons: true,
 		},
 		preferencesModal: {
-			layout: 'box',
-			position: 'right',
-			equalWeightButtons: true,
-			flipButtons: false
+			layout: "box",
+            position: "left",
+            equalWeightButtons: true,
+            flipButtons: false
 		}
 	},
 	categories: {
@@ -68,7 +70,7 @@ export const config: CookieConsentConfig = {
 						{
 							title: 'Uso de Cookies',
 							description:
-								'Para poder ofrecerte una mejor experiencia de usuario, obtener datos analíticos, almacenar y recuperar información sobre tus hábitos de navegación o de tu equipo y desarrollar su actividad, este sitio web Un SImple Programador, utiliza cookies propias y de terceros.'
+								'Para poder ofrecerte una mejor experiencia de usuario, obtener datos analíticos, almacenar y recuperar información sobre tus hábitos de navegación o de tu equipo y desarrollar su actividad, este sitio web Un Simple Programador, utiliza cookies propias y de terceros.'
 						},
 						{
 							title:
@@ -86,5 +88,6 @@ export const config: CookieConsentConfig = {
 				}
 			}
 		}
-	}
+	},
+	disablePageInteraction: true
 }

@@ -52,7 +52,7 @@ export const config: CookieConsentConfig = {
 				consentModal: {
 					title: 'Hola! es momento de las galletas🍪',
 					description:
-						'Este sitio web utiliza Cookies para garantizar que tenga la mejor experiencia en nuestro sitio web, Algunas son esenciales para mantener el buen funcionamiento del sitio y nuestros servicios. Otras son opcionales y permiten personalizar tu experiencia y los anuncios,  además de generar estadísticas.',
+						'Este sitio web utiliza Cookies para garantizar que tenga la mejor experiencia en nuestro sitio web. ¿Estás de acuerdo con esto?',
 					acceptAllBtn: 'Aceptar todo',
 					acceptNecessaryBtn: 'Rechazar todo',
 					showPreferencesBtn: 'Gestionar preferencias',

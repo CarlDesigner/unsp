@@ -29,6 +29,22 @@ body::-webkit-scrollbar-thumb {
 
 /*  */
 
+
+@media screen and (max-width:360px) {
+  .legals {
+    margin-top: 50px;
+  }
+
+  footer {
+    margin-bottom: 50px;
+  }
+
+  .mobile-gradient {
+    @apply bg-gradient-to-r from-fuchsia-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+}
+
 @media screen and (max-width:480px) {
   .legals {
     font-size: 15px;

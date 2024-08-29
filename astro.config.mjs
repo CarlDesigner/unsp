@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
+import react from '@astrojs/react';
 import { remarkReadingTime } from './src/utils/readTime.ts';
-import dotenv from 'dotenv';
 import icon from "astro-icon";
 
 
@@ -29,7 +29,7 @@ export default defineConfig({
       wrap: true
     },
     drafts: true
-  }), sitemap(), tailwind(), icon()],
+  }), sitemap(), tailwind(), icon(), react()],
 
   // Desactiva la barra de herramientas de Astro DevTools
   devToolbar: {

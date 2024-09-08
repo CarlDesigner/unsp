@@ -9,6 +9,7 @@
 
 	.prose code {
 		@apply text-base;
+		@apply bg-gray-900 text-red-500 font-mono px-1 rounded;
 	}
 
 	/* prose styles here */
@@ -18,7 +19,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply text-zinc-800 dark:text-zinc-100   !important;
+		@apply text-zinc-800 dark:text-zinc-100 !important;
 	}
 
 	html.dark .shiki,

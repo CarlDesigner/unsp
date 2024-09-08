@@ -35,6 +35,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      remark-gemoji:
+        specifier: ^8.0.0
+        version: 8.0.0
       vanilla-cookieconsent:
         specifier: 3.0.1
         version: 3.0.1
@@ -102,6 +105,9 @@ importers:
       reading-time:
         specifier: ^1.5.0
         version: 1.5.0
+      shiki:
+        specifier: ^1.16.2
+        version: 1.16.2
       slugify:
         specifier: ^1.6.6
         version: 1.6.6
@@ -1861,6 +1867,12 @@ packages:
   '@sambego/storybook-styles@1.0.0':
     resolution: {integrity: sha512-n0SqZwDewUDRaStEcoNMiYy9qovaLVStsh4Gb2dc2LLiG3IIK0UXdeR1N7puVuRihJq/192uOyGPCjZ/NAteuA==}
 
+  '@shikijs/core@1.16.2':
+    resolution: {integrity: sha512-XSVH5OZCvE4WLMgdoBqfPMYmGHGmCC3OgZhw0S7KcSi2XKZ+5oHGe71GFnTljgdOxvxx5WrRks6QoTLKrl1eAA==}
+
+  '@shikijs/vscode-textmate@9.2.0':
+    resolution: {integrity: sha512-5FinaOp6Vdh/dl4/yaOTh0ZeKch+rYS8DUb38V3GMKYVkdqzxw53lViRKUYkVILRiVQT7dcPC7VvAKOR73zVtQ==}
+
   '@svgr/babel-plugin-add-jsx-attribute@6.5.1':
     resolution: {integrity: sha512-9PYGcXrAxitycIjRmZB+Q0JaN07GZIWaTBIGQzfaZv+qr1n8X1XUEJ5rZ/vx6OVD9RRYlrNnXWExQXcmZeD/BQ==}
     engines: {node: '>=10'}
@@ -2025,6 +2037,9 @@ packages:
 
   '@types/hast@3.0.3':
     resolution: {integrity: sha512-2fYGlaDy/qyLlhidX42wAH0KBi2TCjKMH8CHmBXgRlJ3Y+OXTiqsPQ6IWarZKwF1JoUcAJdPogv1d4b0COTpmQ==}
+
+  '@types/hast@3.0.4':
+    resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
   '@types/hoist-non-react-statics@3.3.4':
     resolution: {integrity: sha512-ZchYkbieA+7tnxwX/SCBySx9WwvWR8TaP5tb2jRAzwvLb/rWchGw3v0w3pqUbUvj0GCwW2Xz/AVPSk6kUGctXQ==}
@@ -3821,6 +3836,9 @@ packages:
 
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  gemoji@8.1.0:
+    resolution: {integrity: sha512-HA4Gx59dw2+tn+UAa7XEV4ufUKI4fH1KgcbenVA9YKSj1QJTT0xh5Mwv5HMFNN3l2OtUe3ZIfuRwSyZS5pLIWw==}
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -5884,6 +5902,9 @@ packages:
   relay-runtime@12.0.0:
     resolution: {integrity: sha512-QU6JKr1tMsry22DXNy9Whsq5rmvwr3LSZiiWV/9+DFpuTWvp+WFhobWMc8TC4OjKFfNhEZy7mOiqUAn5atQtug==}
 
+  remark-gemoji@8.0.0:
+    resolution: {integrity: sha512-/fL9rc72FYwFGtOKcT+QeQdx9Q9t5v4N6KLXSDOTEgaedzK85I9judBqB2eqz+g4b0ERMejlwSOuPK+wket6aA==}
+
   remark-gfm@2.0.0:
     resolution: {integrity: sha512-waIv4Tjcd2CTUDxKRYzuPyIHw1FoX4H2GjXAzXV9PxQWb+dU4fJivd/FZ+nxyzPARrqTjMIkwIwPoWNbpBhjcQ==}
 
@@ -6111,6 +6132,9 @@ packages:
   shebang-regex@3.0.0:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
+
+  shiki@1.16.2:
+    resolution: {integrity: sha512-gSym0hZf5a1U0iDPsdoOAZbvoi+e0c6c3NKAi03FoSLTm7oG20tum29+gk0wzzivOasn3loxfGUPT+jZXIUbWg==}
 
   shikiji@0.6.13:
     resolution: {integrity: sha512-4T7X39csvhT0p7GDnq9vysWddf2b6BeioiN3Ymhnt3xcy9tXmDcnsEFVxX18Z4YcQgEE/w48dLJ4pPPUcG9KkA==}
@@ -9339,6 +9363,13 @@ snapshots:
 
   '@sambego/storybook-styles@1.0.0': {}
 
+  '@shikijs/core@1.16.2':
+    dependencies:
+      '@shikijs/vscode-textmate': 9.2.0
+      '@types/hast': 3.0.4
+
+  '@shikijs/vscode-textmate@9.2.0': {}
+
   '@svgr/babel-plugin-add-jsx-attribute@6.5.1(@babel/core@7.23.6)':
     dependencies:
       '@babel/core': 7.23.6
@@ -9834,6 +9865,10 @@ snapshots:
       '@types/unist': 2.0.9
 
   '@types/hast@3.0.3':
+    dependencies:
+      '@types/unist': 3.0.1
+
+  '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.1
 
@@ -13961,6 +13996,8 @@ snapshots:
 
   functions-have-names@1.2.3: {}
 
+  gemoji@8.1.0: {}
+
   gensync@1.0.0-beta.2: {}
 
   get-caller-file@2.0.5: {}
@@ -16804,6 +16841,12 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  remark-gemoji@8.0.0:
+    dependencies:
+      '@types/mdast': 4.0.2
+      gemoji: 8.1.0
+      mdast-util-find-and-replace: 3.0.1
+
   remark-gfm@2.0.0:
     dependencies:
       '@types/mdast': 3.0.14
@@ -17166,6 +17209,12 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
+
+  shiki@1.16.2:
+    dependencies:
+      '@shikijs/core': 1.16.2
+      '@shikijs/vscode-textmate': 9.2.0
+      '@types/hast': 3.0.4
 
   shikiji@0.6.13:
     dependencies:

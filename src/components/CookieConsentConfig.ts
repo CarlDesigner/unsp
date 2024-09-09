@@ -1,18 +1,18 @@
 import type { CookieConsentConfig } from 'vanilla-cookieconsent'
-document.documentElement.classList.add('cc--darkmode');
+document.documentElement.classList.add('cc--darkmode')
 export const config: CookieConsentConfig = {
 	guiOptions: {
 		consentModal: {
-			layout: "bar inline",
-            position: "bottom",
-            equalWeightButtons: false,
-            flipButtons: true,
+			layout: 'bar inline',
+			position: 'bottom',
+			equalWeightButtons: false,
+			flipButtons: true
 		},
 		preferencesModal: {
-			layout: "box",
-            position: "left",
-            equalWeightButtons: true,
-            flipButtons: false
+			layout: 'box',
+			position: 'left',
+			equalWeightButtons: true,
+			flipButtons: false
 		}
 	},
 	categories: {

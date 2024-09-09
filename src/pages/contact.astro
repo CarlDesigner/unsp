@@ -1,44 +1,43 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout";
-import Contactform from "@/components/contactform";
-import Envelope from "@/components/icons/Envelope";
-import Map from "@/components/icons/Map";
-import Chat from "@/components/icons/Chat";
+import BaseLayout from '@/layouts/BaseLayout'
+import Contactform from '@/components/contactform'
+import Envelope from '@/components/icons/Envelope'
+import Map from '@/components/icons/Map'
+import Chat from '@/components/icons/Chat'
 ---
 
-<BaseLayout title="Contact">
+<BaseLayout title='Contact'>
+	<h2 class='text-3xl font-bold text-black dark:text-white text-center'>
+		Estamos aquí para ayudarte
+	</h2>
+	<p class='text-black dark:text-white text-center'>
+		Aquí en este espacio es donde puedes dejar tus dudas para aclarártelas lo más pronto posible
+	</p>
 
-    <h2 class="text-3xl font-bold text-black dark:text-white text-center">
-      Estamos aquí para ayudarte
-    </h2>
-    <p class=" text-black dark:text-white text-center">
-      Aquí en este espacio es donde puedes dejar tus dudas para aclarártelas lo más pronto posible
-    </p>
-    
-  <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-    <div>
-      <h2 class="font-medium text-2xl text-white-800">Contáctanos</h2>
-      <p class="text-lg leading-relaxed text-gray-500 mt-3">
-        ¿Necesitas ayuda? Estamos aquí para ayudarte.
-        Llena el formulario, envíanos un correo electrónico o escríbenos en el chat.
-      </p>
-      <div class="mt-5">
-        <div class="flex items-center mt-2 space-x-2 text-gray-500">
-          <Map />
-          <span>Bogotá DC, Colombia.</span>
-        </div><div class="flex items-center mt-2 space-x-2 text-gray-500">
-          <Envelope /><a
-          href="mailto:hello@stablotemplate.com">unsimpleprogramador.blog@gmail.com</a
-          >
-        </div><div class="flex items-center mt-2 space-x-2 text-gray-500">
-          <Chat /><a
-            href="https://api.whatsapp.com/send?phone=+573202028049&text=Hola!">+57 300 123 4567</a
-          >
-        </div>
-      </div>
-    </div>
-    <div>
-      <Contactform />
-    </div>
-  </div>
+	<div class='grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16'>
+		<div>
+			<h2 class='font-medium text-2xl text-white-800'>Contáctanos</h2>
+			<p class='text-lg leading-relaxed text-gray-500 mt-3'>
+				¿Necesitas ayuda? Estamos aquí para ayudarte. Llena el formulario, envíanos un correo
+				electrónico o escríbenos en el chat.
+			</p>
+			<div class='mt-5'>
+				<div class='flex items-center mt-2 space-x-2 text-gray-500'>
+					<Map />
+					<span>Bogotá DC, Colombia.</span>
+				</div><div class='flex items-center mt-2 space-x-2 text-gray-500'>
+					<Envelope /><a href='mailto:hello@stablotemplate.com'
+						>unsimpleprogramador.blog@gmail.com</a
+					>
+				</div><div class='flex items-center mt-2 space-x-2 text-gray-500'>
+					<Chat /><a href='https://api.whatsapp.com/send?phone=+573202028049&text=Hola!'
+						>+57 300 123 4567</a
+					>
+				</div>
+			</div>
+		</div>
+		<div>
+			<Contactform />
+		</div>
+	</div>
 </BaseLayout>

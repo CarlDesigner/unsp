@@ -29,26 +29,28 @@ import { AstroFont } from 'astro-font'
 <meta name='generator' content={Astro.generator} />
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-261EF86MNJ"></script>
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-261EF86MNJ'></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || []
+	function gtag() {
+		dataLayer.push(arguments)
+	}
+	gtag('js', new Date())
 
-  gtag('config', 'G-261EF86MNJ');
+	gtag('config', 'G-261EF86MNJ')
 </script>
-
-
-
 
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
-<link rel="icon" href="/Favicon.svg" type="image/x-icon">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-<link rel="stylesheet" href="src/styles/customstyles.css">
+<link rel='icon' href='/Favicon.svg' type='image/x-icon' />
+<link
+	rel='stylesheet'
+	href='https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css'
+/>
+<link rel='stylesheet' href='src/styles/customstyles.css' />
 
 <!-- ViewTransitions  -->
 <ViewTransitions />

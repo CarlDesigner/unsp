@@ -11,7 +11,8 @@ interface SiteConfig {
 export const siteConfig: SiteConfig = {
 	author: 'CarlDesigner', // Site author
 	title: 'Un Simple Programador', // Site title.
-	description: ' Aprende a programar y desarrollar sitios web desde cero. Tutoriales y proyectos prácticos para todos los niveles.', // Description to display in the meta tags
+	description:
+		' Aprende a programar y desarrollar sitios web desde cero. Tutoriales y proyectos prácticos para todos los niveles.', // Description to display in the meta tags
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Comparte este post', // Message to share a post on social media

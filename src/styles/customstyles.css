@@ -1,76 +1,71 @@
-
 body {
-  --sb-track-color: #020617;
-  --sb-thumb-color: #4338ca;
-  --sb-size: 10px;
+	--sb-track-color: #020617;
+	--sb-thumb-color: #4338ca;
+	--sb-size: 10px;
 }
 
 body::-webkit-scrollbar {
-  width: var(--sb-size)
+	width: var(--sb-size);
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 3px;
+	background: var(--sb-track-color);
+	border-radius: 3px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 3px;
-  
+	background: var(--sb-thumb-color);
+	border-radius: 3px;
 }
 
 @supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
+	body {
+		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	}
 }
 
 /*  */
 
+@media screen and (max-width: 360px) {
+	.legals {
+		margin-top: 50px;
+	}
 
-@media screen and (max-width:360px) {
-  .legals {
-    margin-top: 50px;
-  }
+	footer {
+		margin-bottom: 50px;
+	}
 
-  footer {
-    margin-bottom: 50px;
-  }
-
-  .mobile-gradient {
-    @apply bg-gradient-to-r from-fuchsia-600 to-purple-600 bg-clip-text text-transparent;
-  }
-
+	.mobile-gradient {
+		@apply bg-gradient-to-r from-fuchsia-600 to-purple-600 bg-clip-text text-transparent;
+	}
 }
 
-@media screen and (max-width:480px) {
-  .legals {
-    font-size: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-  .copy {
-    font-size: 15px;
-    text-align: center;
-  }
-  .main-title {
-    text-align: center;
-  }
+@media screen and (max-width: 480px) {
+	.legals {
+		font-size: 15px;
+		justify-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	.copy {
+		font-size: 15px;
+		text-align: center;
+	}
+	.main-title {
+		text-align: center;
+	}
 }
 
-@media screen and (min-width:480px) and (max-width:768px) {
-  .legals {
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-  .copy {
-    text-align: center;
-  }
-  .main-title {
-    text-align: center;
-  }
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	.legals {
+		justify-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	.copy {
+		text-align: center;
+	}
+	.main-title {
+		text-align: center;
+	}
 }

@@ -16,7 +16,6 @@ const posts = await getPosts(MAX_POSTS)
 		<h2 class='text-lg font-medium tracking-wide text-end'>Últimos Posts</h2>
 		<ListPosts FirstBig={true} posts={posts} />
 	</div>
-	
 </BaseLayout>
 
 <script>
@@ -37,19 +36,18 @@ const posts = await getPosts(MAX_POSTS)
 	}
 </script>
 <script>
-	import { reset, run } from 'vanilla-cookieconsent';
-	  import { config } from '../components/CookieConsentConfig';
-  
-	  const resetBtn = document.getElementById("reset-btn");
-	  const toggleThemeBtb = document.getElementById("toggle-theme-btn");
-  
-	  resetBtn?.addEventListener('click', () => {
-		  reset(true);
-		  run(config);
-	  });
-  
-	  toggleThemeBtb?.addEventListener('click', () => {
-		  document.body.classList.toggle('cc--elegant-black');
-	  });
-  </script>
+	import { reset, run } from 'vanilla-cookieconsent'
+	import { config } from '../components/CookieConsentConfig'
 
+	const resetBtn = document.getElementById('reset-btn')
+	const toggleThemeBtb = document.getElementById('toggle-theme-btn')
+
+	resetBtn?.addEventListener('click', () => {
+		reset(true)
+		run(config)
+	})
+
+	toggleThemeBtb?.addEventListener('click', () => {
+		document.body.classList.toggle('cc--elegant-black')
+	})
+</script>

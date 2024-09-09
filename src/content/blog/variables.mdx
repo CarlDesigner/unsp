@@ -14,11 +14,15 @@ tags:
 
 Continuemos con esta guía que te ayudará a comprender los fundamentos de la programación, en esta segunda parte, abordaremos la explicación de temas que son muy importantes para poder desarrollar la lógica de programación.
 
-<Alert title="IMPORTANTE" type="warning">La lógica de programación se refiere a la capacidad de diseñar y entender secuencias de instrucciones que resuelven problemas. Implica el uso de técnicas y métodos para pensar de manera estructurada sobre cómo un problema puede ser descompuesto y solucionado mediante código.</Alert>
-
+<Alert title='IMPORTANTE' type='warning'>
+	La lógica de programación se refiere a la capacidad de diseñar y entender secuencias de
+	instrucciones que resuelven problemas. Implica el uso de técnicas y métodos para pensar de manera
+	estructurada sobre cómo un problema puede ser descompuesto y solucionado mediante código.
+</Alert>
 
 ## Guía Básica de Variables en Programación
-![](src\assets\images\variablesp.webp)
+
+![](../../assets/images/variablesp.webp)
 
 ### ¿Qué es una variable?
 
@@ -49,13 +53,14 @@ A continuación, veremos cómo se usa cada uno.
 Para declarar una variable en JavaScript, usamos la palabra clave `let` o `const`, seguida de un nombre que damos a la variable.
 
 ```javascript
-let nombre;  // Declara una variable llamada 'nombre'
-nombre = 'Juan';  // Le asigna el valor 'Juan'
+let nombre // Declara una variable llamada 'nombre'
+nombre = 'Juan' // Le asigna el valor 'Juan'
 ```
+
 O también podemos declarar y asignar el valor en una sola línea:
 
 ```javascript
-let nombre = 'Juan';  // Declara y asigna el valor 'Juan'
+let nombre = 'Juan' // Declara y asigna el valor 'Juan'
 ```
 
 ### Tipos de Datos
@@ -65,17 +70,19 @@ Las variables pueden almacenar diferentes **tipos de datos**. Aquí algunos ejem
 1. **Números (Number):**
 
 ```javascript
-let edad = 25;
+let edad = 25
 ```
+
 2. Cadenas de texto (String):
 
 ```javascript
-let saludo = "Hola, ¿cómo estás?";
+let saludo = 'Hola, ¿cómo estás?'
 ```
+
 3. Valores booleanos (Boolean):
 
 ```javascript
-let esMayorDeEdad = true;
+let esMayorDeEdad = true
 ```
 
 ### Ejemplo Práctico
@@ -83,13 +90,13 @@ let esMayorDeEdad = true;
 Imagina que estás creando un programa sencillo para saludar a un usuario dependiendo de su nombre y edad.
 
 ```javascript
-let nombre = 'Carlos';  // Declaramos la variable 'nombre'
-let edad = 28;  // Declaramos la variable 'edad'
+let nombre = 'Carlos' // Declaramos la variable 'nombre'
+let edad = 28 // Declaramos la variable 'edad'
 
 if (edad >= 18) {
-  console.log(`Hola ${nombre}, eres mayor de edad.`);
+	console.log(`Hola ${nombre}, eres mayor de edad.`)
 } else {
-  console.log(`Hola ${nombre}, aún no eres mayor de edad.`);
+	console.log(`Hola ${nombre}, aún no eres mayor de edad.`)
 }
 ```
 
@@ -110,7 +117,7 @@ En este ejemplo:
 Si sabes que una variable **no debe cambiar**, usa `const`. Por ejemplo, el valor de **PI** en matemáticas:
 
 ```javascript
-const PI = 3.1416;
+const PI = 3.1416
 ```
 
 Si intentas cambiar el valor de una variable declarada con `const`, obtendrás un error.
@@ -123,7 +130,6 @@ Las variables son fundamentales en cualquier lenguaje de programación. Son como
 
 Crea un programa que almacene el nombre de un usuario y su edad. Si la edad es mayor o igual a 18, el programa debería mostrar un mensaje que diga "Bienvenido, [nombre], puedes acceder al sistema". Si es menor, debería decir "Lo siento, [nombre], no puedes acceder al sistema".
 
-
 <details className="p-4 rounded-md bg-gray-100 dark:bg-gray-800">
 <summary className="cursor-pointer text-blue-600 dark:text-blue-400 hover:underline">Ver resultado</summary>
 ```javascript
@@ -131,64 +137,15 @@ let nombre = 'Ana';
 let edad = 16;
 
 if (edad >= 18) {
-  console.log(`Bienvenida, ${nombre}, puedes acceder al sistema.`);
+console.log(`Bienvenida, ${nombre}, puedes acceder al sistema.`);
 } else {
-  console.log(`Lo siento, ${nombre}, no puedes acceder al sistema.`);
+console.log(`Lo siento, ${nombre}, no puedes acceder al sistema.`);
 }
+
 ```
 </details>
 
 
-<Alert title="RECUERDA" type="success">Ser autodidacta significa aprender por cuenta propia, y esa es la clave para alcanzar un conocimiento profundo y adaptado a tus necesidades. Continúa avanzando, explora nuevas áreas y ¡Nunca dejes de aprender!.</Alert> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<Alert title="RECUERDA" type="success">Ser autodidacta significa aprender por cuenta propia, y esa es la clave para alcanzar un conocimiento profundo y adaptado a tus necesidades. Continúa avanzando, explora nuevas áreas y ¡Nunca dejes de aprender!.</Alert>
 
 import Alert from '@/components/Alert'

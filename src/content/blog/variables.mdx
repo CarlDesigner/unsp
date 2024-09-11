@@ -114,11 +114,13 @@ En este ejemplo:
 
 ## Variables Constantes
 
-Si sabes que una variable **no debe cambiar**, usa `const`. Por ejemplo, el valor de **PI** en matemáticas:
+En programación, cuando sabes que el valor de una variable **no debe cambiar** a lo largo de la ejecución del programa, lo recomendable es usar `const` para declararla. Este tipo de variables se denominan **constantes**. Un buen ejemplo es el valor de **PI** en matemáticas, que siempre es el mismo:
+
 
 ```javascript
 const PI = 3.1416
 ```
+Una vez que defines una variable con `const`, no puedes reasignarle un nuevo valor. Si intentas hacerlo, el programa generará un error. Las constantes son especialmente útiles cuando necesitas asegurarte de que ciertos valores clave no se modificarán accidentalmente durante la ejecución del código, lo que ayuda a mantener la estabilidad y seguridad en el programa.
 
 Si intentas cambiar el valor de una variable declarada con `const`, obtendrás un error.
 
@@ -126,7 +128,29 @@ Si intentas cambiar el valor de una variable declarada con `const`, obtendrás u
 
 Las variables son fundamentales en cualquier lenguaje de programación. Son como pequeños contenedores donde guardamos información que el programa necesita. Aprender a usarlas correctamente te permitirá escribir programas más dinámicos y útiles.
 
-#### Ejercicio Práctico
+#### Ejercicio Práctico 1: Área de un rectángulo
+
+*Objetivo:* Usar variables para calcular el área de un rectángulo.
+
+*Instrucciones:*
+1. Declara dos variables, `largo` y `ancho`, y asígnales valores numéricos.
+2. Declara una tercera variable, `area`, que contenga el resultado de multiplicar `largo` por `ancho`.
+3. Muestra el área en la consola.
+
+<details className="p-4 rounded-md bg-gray-100 dark:bg-gray-800">
+<summary className="cursor-pointer text-blue-600 dark:text-blue-400 hover:underline">Ver resultado</summary>
+```javascript
+let largo = 8;
+let ancho = 4;
+
+let area = largo * ancho;
+
+console.log(area);  // Resultado: 32
+
+```
+</details>
+
+#### Ejercicio Práctico 2
 
 Crea un programa que almacene el nombre de un usuario y su edad. Si la edad es mayor o igual a 18, el programa debería mostrar un mensaje que diga "Bienvenido, [nombre], puedes acceder al sistema". Si es menor, debería decir "Lo siento, [nombre], no puedes acceder al sistema".
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout";
+import authorImage from '../assets/images/Author.webp';
 ---
 
 
@@ -8,7 +9,7 @@ import BaseLayout from "@/layouts/BaseLayout";
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
           <!-- Imagen o ilustración del lado izquierdo -->
           <div class="w-full md:w-1/2">
-            <img src="/src/assets/images/Author.webp" alt="Imagen del autor" class="w-10/12 h-auto rounded-lg shadow-lg img-shadow" />
+            <img src={authorImage.src}  alt="Imagen del autor" class="w-10/12 h-auto rounded-lg shadow-lg img-shadow" />
           </div>
           <!-- Contenido textual del lado derecho -->
           <div class="w-full md:w-1/2">

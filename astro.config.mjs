@@ -9,7 +9,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://unsp.vercel.app/',
+  site: 'https://unsimpleprogramador.com/',
   // Write here your website url
   markdown: {
     remarkPlugins: [remarkReadingTime],

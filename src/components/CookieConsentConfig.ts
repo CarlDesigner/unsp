@@ -82,7 +82,7 @@ export const config: CookieConsentConfig = {
 						{
 							title: 'Más información',
 							description:
-								'Para cualquier consulta en relación con la política sobre cookies y sus opciones, porfavor <a class="cc__link" href="https://unsp.vercel.app/contact">contáctenos</a>.'
+								'Para cualquier consulta en relación con la política sobre cookies y sus opciones, porfavor <a class="cc__link" href="https://unsimpleprogramador.com/contact">contáctenos</a>.'
 						}
 					]
 				}

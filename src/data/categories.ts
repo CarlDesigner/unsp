@@ -1,7 +1,7 @@
 // List of categories for blog posts
 export const CATEGORIES = [
 	'Programación',
-	'Tips y Trucos',
+	/* 'Tips y Trucos',
 	'Recursos',
-	'Noticias y Tendencias',
+	'Noticias y Tendencias', */
 ] as const

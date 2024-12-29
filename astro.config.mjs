@@ -30,7 +30,8 @@ export default defineConfig({
     },
     drafts: true
   }), sitemap(), tailwind(), icon(), react()],
-  // Desactiva la barra de herramientas de Astro DevTools
+  
+  // Desactiva la barra de herramientas de Astro DevTools ↓
   devToolbar: {
     enabled: false
   }

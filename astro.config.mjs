@@ -1,37 +1,23 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
-import react from '@astrojs/react';
-import { remarkReadingTime } from './src/utils/readTime.ts';
-import icon from 'astro-icon';
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
+import { SITE } from "./src/lib/config";
+import { modifiedTime, readingTime } from "./src/lib/utils/remarks.mjs";
+import pagefind from "astro-pagefind";
 
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://unsimpleprogramador.com/',
-  // Write here your website url
+  site: SITE.url,
+  base: SITE.basePath,
   markdown: {
-    remarkPlugins: [remarkReadingTime],
-    drafts: true,
-    shikiConfig: {
-      theme: 'one-dark-pro',
-      wrap: true
-    }
+    remarkPlugins: [readingTime, modifiedTime],
   },
-  integrations: [mdx({
-    syntaxHighlight: 'shiki',
-    shikiConfig: {
-      experimentalThemes: {
-        light: 'vitesse-light',
-        dark: 'one-dark-pro'
-      },
-      wrap: true
-    },
-    drafts: true
-  }), sitemap(), tailwind(), icon(), react()],
-  
-  // Desactiva la barra de herramientas de Astro DevTools ↓
+  integrations: [tailwind(), mdx(), sitemap(), pagefind()],
+  experimental: {
+    responsiveImages: true,
+  },
   devToolbar: {
     enabled: false
   }

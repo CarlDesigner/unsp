@@ -1,31 +1,19 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout";
-import authorImage from '../assets/images/Author.webp';
+import ContentLayout from "~/layouts/content.astro";
+import BaseLayout from "~/layouts/base.astro";
+import { getEntry, render } from "astro:content";
+
+const entry = await getEntry("views", "about");
+
+if (!entry) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await render(entry);
 ---
 
-
-<BaseLayout title='Acerca de'>
-    <section class="about-section flex justify-center items-center py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-          <!-- Imagen o ilustración del lado izquierdo -->
-          <div class="w-full md:w-1/2">
-            <img src={authorImage.src}  alt="Imagen del autor" class="w-10/12 h-auto rounded-lg shadow-lg img-shadow" />
-          </div>
-          <!-- Contenido textual del lado derecho -->
-          <div class="w-full md:w-1/2">
-            <h1 class="text-4xl font-bold text-gray-900 dark:text-white leading-tight">
-              Hola ✌️ Soy Carlos Fajardo, un programador autodidacta.
-            </h1>
-            <p class="mt-4 text-gray-600 dark:text-gray-300">
-               A través de este blog, comparto recursos y consejos para quienes quieran aprender desarrollo web por su cuenta. Mi objetivo es ayudar a que más personas adquieran habilidades en programación mediante tutoriales, guías y trucos prácticos. Aquí encontrarás más que simples guías técnicas. Mi objetivo es motivar a quienes se inician en la programación, brindando apoyo y recursos que les ayuden a superar obstáculos y a desarrollar confianza en sus habilidades mientras avanzan en su camino hacia el desarrollo web.
-            </p>
-            <p class="mt-4 text-gray-600 dark:text-gray-300">
-              Quiero inspirar a otros a aprender por sí mismos, demostrando que con las herramientas adecuadas es posible dominar el desarrollo web sin necesidad de costosos estudios. ¡Acompáñame en este camino hacia una carrera exitosa en programación! 🚀
-            </p>
-            <button class="mt-6 bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-6 rounded-md">
-              <a href="/contact">Contáctame</a>
-            </button>
-          </div>
-        </div>
-      </section>
+<BaseLayout entry={entry}>
+  <ContentLayout>
+    <Content />
+  </ContentLayout>
 </BaseLayout>

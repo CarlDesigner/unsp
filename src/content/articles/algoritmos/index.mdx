@@ -1,0 +1,165 @@
+---
+isDraft: false
+isBigHeadline: false
+isSmallHeadline: true
+title: "Introducción a los Algoritmos"
+description: "Guía rápida sobre qué son los algoritmos en programación y cómo usarlos, con ejemplos prácticos en JavaScript para principiantes."
+cover: "./imgs/Algoritmos.avif"
+category: programacion
+publishedTime: "2025-01-05T05:00:00.000Z"
+authors: ["carlos-fajardo"]
+---
+
+
+
+
+## Guía para Principiantes: ¿Qué son los Algoritmos en Programación?
+
+Los **algoritmos** son un concepto fundamental en la programación, y entenderlos te ayudará a resolver problemas de forma estructurada y eficiente. A continuación, te explicaré qué son, por qué son importantes y te daré ejemplos claros y fáciles de seguir utilizando JavaScript.
+
+### ¿Qué es un Algoritmo?
+
+Un **algoritmo** es un conjunto de pasos o instrucciones que se siguen para resolver un problema o realizar una tarea. Estos pasos deben ser finitos, precisos y ejecutables en un orden específico. Piensa en un algoritmo como una receta de cocina: sigues los pasos para obtener un resultado final, que en este caso es un plato. En programación, los algoritmos nos ayudan a tomar decisiones y solucionar problemas de manera automatizada.
+
+
+
+### Características de un Algoritmo
+
+1. **Entrada**: Información o datos que el algoritmo necesita para trabajar.
+2. **Salida**: El resultado final que produce el algoritmo.
+3. **Claridad**: Cada paso debe ser claro y comprensible.
+4. **Finitud**: Debe tener un número finito de pasos.
+5. **Eficiencia**: El algoritmo debe ser lo más rápido y eficiente posible.
+
+### Ejemplo simple: Algoritmo para hacer un sándwich
+
+1. Tomar dos rebanadas de pan.
+2. Untar mantequilla en una rebanada.
+3. Colocar jamón y queso.
+4. Poner la otra rebanada de pan encima.
+5. Cortar el sándwich por la mitad y servir.
+
+En programación, creamos algoritmos para hacer que una computadora realice tareas específicas siguiendo pasos similares.
+
+### ¿Por qué son importantes los Algoritmos en Programación?
+
+Saber cómo construir algoritmos te permite:
+
+- **Resolver problemas de forma lógica**.
+- **Optimizar** tu código, haciéndolo más rápido y eficiente.
+- **Dividir problemas grandes** en pequeños pasos manejables.
+- **Mejorar la comprensión** de cómo funcionan los programas y sistemas informáticos.
+
+### Ejemplo en JavaScript: Sumar dos números
+
+Vamos a escribir un algoritmo sencillo que sume dos números.
+
+```javascript
+// 1. Definir los números
+let num1 = 5;
+let num2 = 3;
+
+// 2. Sumar los números
+let suma = num1 + num2;
+
+// 3. Mostrar el resultado
+console.log("La suma es: " + suma);
+
+```
+
+### ¿Qué está pasando aquí?
+
+1. **Entrada**: Los valores `5` y `3` (que son los números que queremos sumar).
+2. **Proceso**: Sumamos los números con la operación `+`.
+3. **Salida**: El resultado de la suma, que es `8`.
+
+### Ejemplo más complejo: Encontrar el mayor de tres números
+
+Imagina que necesitas encontrar cuál es el número más grande entre tres números diferentes. Vamos a hacer un algoritmo que lo resuelva:
+
+```jsx
+// 1. Definir tres números
+let a = 10;
+let b = 20;
+let c = 15;
+
+// 2. Comparar los números
+let mayor;
+
+if (a > b && a > c) {
+  mayor = a;
+} else if (b > a && b > c) {
+  mayor = b;
+} else {
+  mayor = c;
+}
+
+// 3. Mostrar el número mayor
+console.log("El número mayor es: " + mayor);
+
+```
+
+### ¿Qué hace este algoritmo?
+
+1. **Entrada**: Los números `10`, `20` y `15`.
+2. **Proceso**: Compara los tres números usando operadores lógicos para ver cuál es mayor.
+3. **Salida**: El número mayor, que en este caso es `20`.
+
+## Tipos de Algoritmos
+
+Existen diferentes tipos de algoritmos según el tipo de problema que quieras resolver. Algunos comunes son:
+
+- **Algoritmos de búsqueda**: Encuentran un elemento en una lista (por ejemplo, buscar un contacto en tu teléfono).
+- **Algoritmos de ordenación**: Ordenan una lista de elementos (como organizar nombres alfabéticamente).
+- **Algoritmos de recursión**: Llaman a sí mismos para resolver problemas grandes dividiéndolos en partes más pequeñas.
+
+### Ejemplo de un algoritmo de búsqueda simple: Buscar un número en una lista
+
+```jsx
+// 1. Definir una lista de números
+let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// 2. Definir el número que queremos buscar
+let buscarNumero = 7;
+
+// 3. Buscar el número en la lista
+let encontrado = false;
+
+for (let i = 0; i < numeros.length; i++) {
+  if (numeros[i] === buscarNumero) {
+    encontrado = true;
+    break;
+  }
+}
+
+// 4. Mostrar el resultado
+if (encontrado) {
+  console.log("Número encontrado.");
+} else {
+  console.log("Número no encontrado.");
+}
+
+```
+
+### ¿Qué pasa en este código?
+
+1. **Entrada**: La lista de números y el número que queremos buscar (`7`).
+2. **Proceso**: Recorremos la lista con un `for` y verificamos si encontramos el número.
+3. **Salida**: Muestra si el número fue encontrado o no.
+
+## Conclusión
+
+Los algoritmos son la base de la programación. A medida que avances en tu aprendizaje, te encontrarás creando y optimizando algoritmos más complejos para resolver problemas. Es importante que pienses en los algoritmos como una forma estructurada de abordar cualquier tarea, desde las más simples hasta las más complejas.
+
+En resumen:
+
+- Un **algoritmo** es un conjunto de pasos para resolver un problema.
+- Son **fundamentales** en la programación, ya que te permiten pensar lógicamente y estructurar tu código.
+- Con **práctica**, crearás algoritmos más complejos y eficientes.
+
+Sigue practicando y experimentando con tus propios algoritmos en JavaScript. ¡Pronto verás lo poderosos que pueden ser en el mundo de la programación!
+
+
+
+
+

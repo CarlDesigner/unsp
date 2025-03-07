@@ -1,0 +1,28 @@
+---
+import type { Icon } from "~/lib/types";
+
+type Props = Icon;
+
+const {
+  width = "20",
+  height = "20",
+  color = "currentColor",
+  strokeWidth = "1.5",
+  size,
+} = Astro.props;
+---
+
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  width={size ? size : width}
+  height={size ? size : height}
+  color={color}
+  fill="none"
+>
+    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width={strokeWidth} />
+    <path d="M8 12C8 18 12 22 12 22C12 22 16 18 16 12C16 6 12 2 12 2C12 2 8 6 8 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M21 15H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M21 9H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

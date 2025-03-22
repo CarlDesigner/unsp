@@ -28,16 +28,25 @@ const OGImage = new URL(meta.ogImage, Astro.url).href;
   <meta name="generator" content={Astro.generator} />
   
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-261EF86MNJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-261EF86MNJ');
-</script>
-
-  <!-- Google Analytics -->
+  <script>
+    declare global {
+      interface Window {
+        dataLayer: any[];
+        gtag: (...args: any[]) => void;
+      }
+    }
+  
+    window.dataLayer = window.dataLayer || [];
+  
+    function gtag(...args: any[]) {
+      window.dataLayer.push(args);
+    }
+  
+    window.gtag = gtag;
+  
+    gtag('js', new Date());
+    gtag('config', 'G-261EF86MNJ');
+  </script>
   
 
   <!-- Favicons -->

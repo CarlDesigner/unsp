@@ -1,0 +1,145 @@
+---
+import { db } from "~/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+
+interface ConsentData {
+  accepted: boolean;
+  analytics?: boolean;
+  ads?: boolean;
+}
+
+async function saveConsent(consent: ConsentData) {
+  try {
+    await addDoc(collection(db, "cookies_consent"), {
+      accepted: consent.accepted,
+      analytics: consent.analytics || false,
+      ads: consent.ads || false,
+      timestamp: new Date(),
+    });
+  } catch (error) {
+    console.error("Error guardando consentimiento:", error);
+  }
+}
+---
+
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex justify-between items-center"
+>
+  <p>
+    Usamos cookies para mejorar tu experiencia en el sitio. Puedes aceptar
+    todas, rechazarlas o configurar tus preferencias.
+    <a href="/cookie-policy" class="underline text-blue-400">Más información</a
+    >.
+  </p>
+  <div class="flex gap-2">
+    <button id="accept-cookies" class="bg-green-500 px-4 py-2 rounded"
+      >Aceptar</button
+    >
+    <button id="reject-cookies" class="bg-red-500 px-4 py-2 rounded"
+      >Rechazar</button
+    >
+    <button id="config-cookies" class="bg-yellow-500 px-4 py-2 rounded"
+      >Configurar</button
+    >
+  </div>
+</div>
+
+<!-- Modal para Configuración de Cookies -->
+<div
+  id="cookie-settings"
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center invisible pointer-events-none"
+>
+  <div class="bg-white p-6 rounded shadow-lg text-black">
+    <h2 class="text-lg font-bold mb-2">Configuración de Cookies</h2>
+    <p>Selecciona qué tipo de cookies deseas permitir:</p>
+    <label class="block mt-2">
+      <input type="checkbox" id="analytics-cookies" checked /> Cookies Analíticas
+    </label>
+    <label class="block mt-2">
+      <input type="checkbox" id="ads-cookies" checked /> Cookies de Publicidad
+    </label>
+    <div class="flex gap-2 mt-4">
+      <button id="save-config" class="bg-blue-500 px-4 py-2 rounded"
+        >Guardar</button
+      >
+      <button id="close-config" class="bg-gray-500 px-4 py-2 rounded"
+        >Cerrar</button
+      >
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const rejectBtn = document.getElementById("reject-cookies");
+    const configBtn = document.getElementById("config-cookies");
+    const settingsModal = document.getElementById("cookie-settings");
+    const saveConfigBtn = document.getElementById("save-config");
+    const closeConfigBtn = document.getElementById("close-config");
+    const consentKey = "cookie_consent";
+
+    if (!localStorage.getItem(consentKey) && banner) {
+      banner.classList.remove("hidden");
+    }
+
+    async function sendConsent(consent: {
+      accepted: boolean;
+      analytics: boolean;
+      ads: boolean;
+    }) {
+      try {
+        await fetch("/api/saveConsent", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(consent),
+        });
+      } catch (error) {
+        console.error("Error enviando datos:", error);
+      }
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", async () => {
+        const consent = { accepted: true, analytics: true, ads: true };
+        localStorage.setItem(consentKey, JSON.stringify(consent));
+        banner?.classList.add("hidden");
+        await sendConsent(consent);
+      });
+    }
+
+    rejectBtn?.addEventListener("click", async () => {
+      const consent = { accepted: false, analytics: false, ads: false };
+      localStorage.setItem(consentKey, JSON.stringify(consent));
+      banner?.classList.add("hidden");
+
+      await sendConsent(consent);
+    });
+
+    configBtn?.addEventListener("click", () => {
+      settingsModal?.classList.remove("invisible", "pointer-events-none");
+    });
+
+    closeConfigBtn?.addEventListener("click", () => {
+      settingsModal?.classList.add("invisible", "pointer-events-none");
+    });
+
+    saveConfigBtn?.addEventListener("click", async () => {
+      const analytics = (
+        document.getElementById("analytics-cookies") as HTMLInputElement
+      )?.checked;
+      const ads = (document.getElementById("ads-cookies") as HTMLInputElement)
+        ?.checked;
+
+      const consent = { accepted: true, analytics, ads };
+
+      localStorage.setItem(consentKey, JSON.stringify(consent));
+      settingsModal?.classList.add("hidden");
+      banner?.classList.add("hidden");
+
+      await sendConsent(consent);
+    });
+  });
+</script>

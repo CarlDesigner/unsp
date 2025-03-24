@@ -2,6 +2,7 @@
 import { SITE } from "~/lib/config";
 import Head from "~/components/bases/head.astro";
 import Header from "~/components/shared/header.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 import Footer from "~/components/shared/footer.astro";
 import type { Entry } from "~/lib/types";
 import { getMeta } from "~/lib/utils/getMeta";
@@ -24,5 +25,7 @@ const meta = await getMeta(entry);
       <slot />
     </main>
     <Footer />
+    <CookieBanner />
   </body>
 </html>
+

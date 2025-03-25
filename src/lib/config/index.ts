@@ -74,7 +74,7 @@ export const SOCIAL_LINKS: Link[] = [
     icon: "github",
   },
   {
-    href: "https://www.t.me",
+    href: "https://carldesigner.vercel.app",
     text: "Web",
     icon: "globe",
   },

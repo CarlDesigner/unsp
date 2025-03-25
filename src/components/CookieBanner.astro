@@ -24,47 +24,70 @@ async function saveConsent(consent: ConsentData) {
 
 <div
   id="cookie-banner"
-  class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex justify-between items-center invisible opacity-0 transition-opacity duration-300"
+  class="fixed bottom-0 left-0 w-full bg-neutral-800 dark:bg-neutral-900 text-neutral-200 dark:text-neutral-300 p-4 sm:p-6 flex flex-wrap justify-between items-center gap-4 sm:gap-6 invisible opacity-0 transition-opacity duration-300"
 >
-  <p>
+  <p class="text-sm sm:text-base flex-1">
     Usamos cookies para mejorar tu experiencia en el sitio. Puedes aceptar
     todas, rechazarlas o configurar tus preferencias.
-    <a href="/cookie-policy" class="underline text-blue-400">Más información</a
-    >.
+    <a
+      id="more-info"
+      href="/cookie-policy"
+      target="_blank"
+      class="underline text-blue-400">Más información</a
+    >
   </p>
-  <div class="flex gap-2">
-    <button id="accept-cookies" class="bg-green-500 px-4 py-2 rounded"
-      >Aceptar</button
+  <div class="flex flex-wrap gap-2 sm:gap-4">
+    <button
+      id="accept-cookies"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full sm:w-auto"
     >
-    <button id="reject-cookies" class="bg-red-500 px-4 py-2 rounded"
-      >Rechazar</button
+      Aceptar
+    </button>
+    <button
+      id="reject-cookies"
+      class="bg-neutral-600 hover:bg-neutral-700 text-white px-4 py-2 rounded w-full sm:w-auto"
     >
-    <button id="config-cookies" class="bg-yellow-500 px-4 py-2 rounded"
-      >Configurar</button
+      Rechazar
+    </button>
+    <button
+      id="config-cookies"
+      class="bg-neutral-500 hover:bg-neutral-600 text-white px-4 py-2 rounded w-full sm:w-auto"
     >
+      Configurar
+    </button>
   </div>
 </div>
 
 <div
   id="cookie-settings"
-  class="fixed inset-0 bg-black bg-opacity-50 invisible opacity-0 flex items-center justify-center transition-opacity duration-300"
+  class="fixed inset-0 bg-black bg-opacity-50 invisible opacity-0 flex items-center justify-center transition-opacity duration-300 p-4"
 >
-  <div class="bg-white p-6 rounded shadow-lg text-black">
-    <h2 class="text-lg font-bold mb-2">Configuración de Cookies</h2>
-    <p>Selecciona qué tipo de cookies deseas permitir:</p>
-    <label class="block mt-2">
+  <div
+    class="bg-white dark:bg-neutral-900 p-6 rounded shadow-lg text-black dark:text-neutral-200 w-full max-w-md sm:max-w-lg"
+  >
+    <h2 class="text-lg sm:text-xl font-bold mb-2">Configuración de Cookies</h2>
+    <p class="text-sm sm:text-base">
+      Selecciona qué tipo de cookies deseas permitir:
+    </p>
+    <label class="block mt-2 text-sm sm:text-base">
       <input type="checkbox" id="analytics-cookies" checked /> Cookies Analíticas
     </label>
-    <label class="block mt-2">
+    <label class="block mt-2 text-sm sm:text-base">
       <input type="checkbox" id="ads-cookies" checked /> Cookies de Publicidad
     </label>
-    <div class="flex gap-2 mt-4">
-      <button id="save-config" class="bg-blue-500 px-4 py-2 rounded"
-        >Guardar</button
+    <div class="flex flex-wrap gap-2 mt-4">
+      <button
+        id="save-config"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full sm:w-auto"
       >
-      <button id="close-config" class="bg-gray-500 px-4 py-2 rounded"
-        >Cerrar</button
+        Guardar
+      </button>
+      <button
+        id="close-config"
+        class="bg-neutral-600 hover:bg-neutral-700 text-white px-4 py-2 rounded w-full sm:w-auto"
       >
+        Cerrar
+      </button>
     </div>
   </div>
 </div>
@@ -84,7 +107,11 @@ async function saveConsent(consent: ConsentData) {
       banner.classList.remove("invisible", "opacity-0");
     }
 
-    async function sendConsent(consent: { accepted: boolean; analytics: any; ads: any; }) {
+    async function sendConsent(consent: {
+      accepted: boolean;
+      analytics: any;
+      ads: any;
+    }) {
       // Elimina ": ConsentData"
       try {
         await fetch("/api/saveConsent", {
@@ -122,8 +149,12 @@ async function saveConsent(consent: ConsentData) {
     });
 
     saveConfigBtn?.addEventListener("click", async () => {
-      const analytics = (document.getElementById("analytics-cookies") as HTMLInputElement)?.checked || false;
-const ads = (document.getElementById("ads-cookies") as HTMLInputElement)?.checked || false;
+      const analytics =
+        (document.getElementById("analytics-cookies") as HTMLInputElement)
+          ?.checked || false;
+      const ads =
+        (document.getElementById("ads-cookies") as HTMLInputElement)?.checked ||
+        false;
 
       const consent = { accepted: true, analytics, ads };
       localStorage.setItem(consentKey, JSON.stringify(consent));

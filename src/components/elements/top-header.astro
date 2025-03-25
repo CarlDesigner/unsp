@@ -5,7 +5,7 @@ import MenuDropdown from "./menu-dropdown.astro";
 import { SITE } from "~/lib/config";
 import ThemeController from "../bases/theme-controller.astro";
 ---
-
+<!-- 
 <div class="navbar bg-base-100 border-b">
   <div class="navbar-start lg:w-1/2">
     <MenuDropdown />
@@ -25,6 +25,25 @@ import ThemeController from "../bases/theme-controller.astro";
       target="_blank"
       aria-label="GitHub"
     >
+      <Github />
+    </a>
+  </div>
+</div>
+ -->
+ <div class="navbar bg-base-100 border-b">
+  <div class="navbar-start lg:w-1/2 flex items-center">
+    <MenuDropdown />
+    <a class="text-lg px-2 text-nowrap lg:hidden" href="/">{SITE.title}</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <a class="text-xl px-2" href="/">{SITE.title}</a>
+  </div>
+  <div class="navbar-end flex items-center">
+    <ThemeController class="-mr-1" />
+    <a class="btn btn-ghost btn-circle p-0 m-0 -ml-1" href="/search" aria-label="Search">
+      <Search01 />
+    </a>
+    <a class="btn btn-ghost btn-circle p-0 m-0 -ml-1" href={SITE.github} target="_blank" aria-label="GitHub">
       <Github />
     </a>
   </div>

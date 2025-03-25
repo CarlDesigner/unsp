@@ -24,7 +24,7 @@ async function saveConsent(consent: ConsentData) {
 
 <div
   id="cookie-banner"
-  class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex justify-between items-center"
+  class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex justify-between items-center invisible opacity-0 transition-opacity duration-300"
 >
   <p>
     Usamos cookies para mejorar tu experiencia en el sitio. Puedes aceptar
@@ -45,10 +45,9 @@ async function saveConsent(consent: ConsentData) {
   </div>
 </div>
 
-<!-- Modal para Configuración de Cookies -->
 <div
   id="cookie-settings"
-  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center invisible pointer-events-none"
+  class="fixed inset-0 bg-black bg-opacity-50 invisible opacity-0 flex items-center justify-center transition-opacity duration-300"
 >
   <div class="bg-white p-6 rounded shadow-lg text-black">
     <h2 class="text-lg font-bold mb-2">Configuración de Cookies</h2>
@@ -82,14 +81,11 @@ async function saveConsent(consent: ConsentData) {
     const consentKey = "cookie_consent";
 
     if (!localStorage.getItem(consentKey) && banner) {
-      banner.classList.remove("hidden");
+      banner.classList.remove("invisible", "opacity-0");
     }
 
-    async function sendConsent(consent: {
-      accepted: boolean;
-      analytics: boolean;
-      ads: boolean;
-    }) {
+    async function sendConsent(consent: { accepted: boolean; analytics: any; ads: any; }) {
+      // Elimina ": ConsentData"
       try {
         await fetch("/api/saveConsent", {
           method: "POST",
@@ -114,31 +110,25 @@ async function saveConsent(consent: ConsentData) {
       const consent = { accepted: false, analytics: false, ads: false };
       localStorage.setItem(consentKey, JSON.stringify(consent));
       banner?.classList.add("hidden");
-
       await sendConsent(consent);
     });
 
     configBtn?.addEventListener("click", () => {
-      settingsModal?.classList.remove("invisible", "pointer-events-none");
+      settingsModal?.classList.remove("invisible", "opacity-0");
     });
 
     closeConfigBtn?.addEventListener("click", () => {
-      settingsModal?.classList.add("invisible", "pointer-events-none");
+      settingsModal?.classList.add("invisible", "opacity-0");
     });
 
     saveConfigBtn?.addEventListener("click", async () => {
-      const analytics = (
-        document.getElementById("analytics-cookies") as HTMLInputElement
-      )?.checked;
-      const ads = (document.getElementById("ads-cookies") as HTMLInputElement)
-        ?.checked;
+      const analytics = (document.getElementById("analytics-cookies") as HTMLInputElement)?.checked || false;
+const ads = (document.getElementById("ads-cookies") as HTMLInputElement)?.checked || false;
 
       const consent = { accepted: true, analytics, ads };
-
       localStorage.setItem(consentKey, JSON.stringify(consent));
-      settingsModal?.classList.add("hidden");
+      settingsModal?.classList.add("invisible", "opacity-0");
       banner?.classList.add("hidden");
-
       await sendConsent(consent);
     });
   });

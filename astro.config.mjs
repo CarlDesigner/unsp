@@ -4,8 +4,8 @@ import mdx from "@astrojs/mdx";
 import { SITE } from "./src/lib/config";
 import { modifiedTime, readingTime } from "./src/lib/utils/remarks.mjs";
 import pagefind from "astro-pagefind";
-
 import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +20,6 @@ export default defineConfig({
   },
   devToolbar: {
     enabled: false
-  }
+  },
+  adapter: vercel()
 });

@@ -14,11 +14,15 @@ const { article, index } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render(article);
 const category = categoriesHandler.oneCategory(article.data.category.id);
+const isUpcoming = new Date(article.data.publishedTime) > new Date();
 ---
 
 <article class="col-span-1 group max-w-sm mx-auto flex">
-  <a href={`/articles/${article.id}`} class="flex flex-col gap-2 h-full">
-    <div class="aspect-video overflow-hidden rounded-md">
+  <a
+    href={isUpcoming ? "#" : `/articles/${article.id}`}
+    class="flex flex-col gap-2 h-full pointer-events-{isUpcoming ? 'none' : 'auto'}"
+  >
+    <div class="relative aspect-video overflow-hidden rounded-md">
       <Image
         src={article.data.cover}
         alt={article.data.covert_alt
@@ -26,8 +30,21 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
           : article.data.title}
         loading={index < 3 ? "eager" : "lazy"}
         layout="responsive"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover {isUpcoming ? 'opacity-50' : ''}"
       />
+      {
+        isUpcoming && (
+          <div class="absolute inset-0 flex items-center justify-center bg-black/60">
+            <span
+              class="relative text-white px-4 py-1 rounded-md text-xs font-semibold uppercase shadow-lg 
+             border border-transparent outline outline-2 outline-offset-2 
+             outline-gradient-to-r from-purple-500 to-blue-500"
+            >
+              Próximamente
+            </span>
+          </div>
+        )
+      }
     </div>
     <div class="flex flex-col flex-1">
       <h3

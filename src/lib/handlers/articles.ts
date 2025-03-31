@@ -2,7 +2,9 @@ import { getCollection } from "astro:content";
 
 const articlesCollection = (
   await getCollection("articles", ({ data }) => {
-    return data.isDraft !== true && new Date(data.publishedTime) < new Date();
+    // exluye los articulos con fecha futura ↓
+    /* return data.isDraft !== true && new Date(data.publishedTime) < new Date(); */
+    return data.isDraft !== true;
   })
 ).sort((a, b) => b.data.publishedTime.localeCompare(a.data.publishedTime));
 

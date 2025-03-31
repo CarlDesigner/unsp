@@ -10,10 +10,15 @@ type Props = {
 };
 
 const { article, isLast } = Astro.props;
+const isUpcoming = new Date(article.data.publishedTime) > new Date();
 ---
 
 <li class="group w-full max-w-md mx-auto lg:max-w-full">
-  <a href={`/articles/${article.id}`} class="flex flex-col lg:flex-row gap-4">
+  <a
+    href={isUpcoming ? "#" : `/articles/${article.id}`}
+    class="flex flex-col lg:flex-row gap-4 pointer-events-{isUpcoming ? 'none' : 'auto'}"
+    aria-disabled={isUpcoming}
+  >
     <div
       class="flex-shrink-0 aspect-square w-32 text-sm text-base-content/60 text-pretty capitalize hidden lg:flex pt-1"
     >
@@ -25,23 +30,38 @@ const { article, isLast } = Astro.props;
         isLast ? "border-b-0" : "border-b",
       ]}
     >
-      <div class="w-full lg:w-60 aspect-video">
+      <div class="relative w-full lg:w-60 aspect-video">
         <Image
           src={article.data.cover}
-          alt={article.data.covert_alt
-            ? article.data.covert_alt
-            : article.data.title}
+          alt={article.data.covert_alt || article.data.title}
           layout="responsive"
           loading={"eager"}
           class="aspect-video rounded w-full h-full"
         />
+        {
+          isUpcoming && (
+            <div class="absolute inset-0 flex items-center justify-center bg-black/60">
+              <span
+                class="relative text-white px-4 py-1 rounded-md text-xs font-semibold uppercase shadow-lg 
+             border border-transparent outline outline-2 outline-offset-2 
+             outline-gradient-to-r from-purple-500 to-blue-500"
+              >
+                Próximamente
+              </span>
+            </div>
+          )
+        }
       </div>
       <div class="flex-1 space-y-2">
         <h3 class="text-xl font-semibold lg:group-hover:underline">
           {article.data.title}
         </h3>
         <p class="text-base-content/80 max-w-xl text-pretty">
-          {article.data.description}
+          {
+            isUpcoming
+              ? "Este artículo estará disponible próximamente. ¡Vuelve pronto!"
+              : article.data.description
+          }
         </p>
       </div>
       <div class="text-sm lg:hidden flex item-center text-base-content/70 pt-2">

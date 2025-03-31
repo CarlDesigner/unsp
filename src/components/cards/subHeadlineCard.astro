@@ -15,16 +15,20 @@ const { article, isLast, isFirst } = Astro.props;
 
 const { remarkPluginFrontmatter } = await render(article);
 const category = categoriesHandler.oneCategory(article.data.category.id);
+const isUpcoming = new Date(article.data.publishedTime) > new Date();
+
+const articleClasses = [
+  "group py-2",
+  isFirst ? "pt-0" : "pt-2",
+  isLast ? "border-b-0 pb-0" : "border-b",
+].join(" ");
 ---
 
-<article
-  class:list={[
-    "group py-2",
-    isFirst ? "pt-0" : "pt-2",
-    isLast ? "border-b-0 pb-0" : "border-b",
-  ]}
->
-  <a href={`/articles/${article.id}`} class="flex items-stretch gap-2 group">
+<article class={articleClasses}>
+  <a
+    href={isUpcoming ? "#" : `/articles/${article.id}`}
+    class="flex items-stretch gap-2 group pointer-events-{isUpcoming ? 'none' : 'auto'}"
+  >
     <div class="flex flex-col flex-1">
       <div class="flex items-center gap-2 mb-1">
         <div class="flex-1">
@@ -47,7 +51,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
       </div>
     </div>
 
-    <div class="overflow-hidden w-[165px] h-[125px] shrink-0">
+    <div class="relative overflow-hidden w-[165px] h-[125px] shrink-0">
       <Image
         src={article.data.cover}
         alt={article.data.covert_alt
@@ -58,6 +62,19 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
         width={165}
         height={125}
       />
+      {
+        isUpcoming && (
+          <div class="absolute inset-0 flex items-center justify-center bg-black/60">
+            <span
+              class="relative text-white px-4 py-1 rounded-md text-xs font-semibold uppercase shadow-lg 
+             border border-transparent outline outline-2 outline-offset-2 
+             outline-gradient-to-r from-purple-500 to-blue-500"
+            >
+              Próximamente
+            </span>
+          </div>
+        )
+      }
     </div>
   </a>
 </article>

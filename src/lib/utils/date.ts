@@ -33,10 +33,6 @@ export const formatDate = (
   formatType: "long" | "short" = "long"
 ) => {
   const parsedDate = parseISO(date);
-  
-  if (formatType === "short") {
-    return format(parsedDate, "dd 'de' MMMM 'de' yyyy", { locale: es });
-  }
 
-  return format(parsedDate, "EEEE, dd 'de' MMMM 'de' yyyy, h:mm a", { locale: es });
+  return format(parsedDate, "dd 'de' MMMM 'de' yyyy", { locale: es });
 };

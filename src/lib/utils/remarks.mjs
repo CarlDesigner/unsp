@@ -14,7 +14,7 @@ export function modifiedTime() {
     }
   };
 }
-export function readingTime() {
+/* export function readingTime() {
   return function (tree, { data }) {
     const textOnPage = toString(tree);
     const readingTime = getReadingTime(textOnPage, { wordsPerMinute: 180 });
@@ -22,4 +22,18 @@ export function readingTime() {
     // i.e. "3 min read"
     data.astro.frontmatter.minutesRead = readingTime.text;
   };
-}
+} */
+
+  export function readingTime() {
+    return function (tree, { data }) {
+      const textOnPage = toString(tree);
+      const readingTime = getReadingTime(textOnPage, { wordsPerMinute: 180 });
+  
+      // Convertimos el tiempo de lectura a español
+      const minutos = Math.ceil(readingTime.minutes); // Redondeamos hacia arriba
+      const textoLectura = minutos === 1 ? "1 minuto de lectura" : `${minutos} minutos de lectura`;
+  
+      // Guardamos el resultado en el frontmatter
+      data.astro.frontmatter.minutesRead = textoLectura;
+    };
+  }

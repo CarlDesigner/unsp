@@ -15,39 +15,81 @@ const { article } = Astro.props;
 const { remarkPluginFrontmatter } = await render(article);
 
 const category = categoriesHandler.oneCategory(article.data.category.id);
+
+const isUpcoming = new Date(article.data.publishedTime) > new Date();
 ---
 
 <article class="group">
-  <a
-    href={`/articles/${article.id}`}
-    class="flex flex-col-reverse md:flex-col gap-4"
-  >
-    <div class="aspect-video overflow-hidden rounded-md">
-      <Image
-        src={article.data.cover}
-        alt={article.data.covert_alt
-          ? article.data.covert_alt
-          : article.data.title}
-        layout="responsive"
-        loading={"eager"}
-      />
-    </div>
-    <div class="flex flex-col gap-2">
-      <div>
-        <h2
-          class="text-xl font-semibold lg:group-hover:underline underline-offset-2"
+  {
+    isUpcoming ? (
+      <div class="flex flex-col-reverse md:flex-col gap-4 opacity-50 pointer-events-none">
+        <span
+          class="relative text-white px-4 py-1 rounded-md text-xs font-semibold uppercase shadow-lg 
+             border border-transparent outline outline-2 outline-offset-2 
+             outline-gradient-to-r from-purple-500 to-blue-500"
         >
-          {article.data.title}
-        </h2>
-        <p class="text-base-content/90 text-base max-w-lg">
-          {article.data.description}
-        </p>
+          Próximamente
+        </span>
+
+        <div class="aspect-video overflow-hidden rounded-md">
+          <Image
+            src={article.data.cover}
+            alt={
+              article.data.covert_alt
+                ? article.data.covert_alt
+                : article.data.title
+            }
+            layout="responsive"
+            loading={"eager"}
+          />
+        </div>
+        <div class="flex flex-col gap-2">
+          <div>
+            <h2 class="text-xl font-semibold">{article.data.title}</h2>
+            <p class="text-base-content/90 text-base max-w-lg">
+              {article.data.description}
+            </p>
+          </div>
+          <div class="flex items-center text-xs text-base-content/80 mt-2">
+            <span class="text-primary">{category.data.title}</span>
+            <Divider />
+            <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center text-xs text-base-content/80 mt-2">
-        <span class="text-primary">{category.data.title}</span>
-        <Divider />
-        <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
-      </div>
-    </div>
-  </a>
+    ) : (
+      <a
+        href={`/articles/${article.id}`}
+        class="flex flex-col-reverse md:flex-col gap-4"
+      >
+        <div class="aspect-video overflow-hidden rounded-md">
+          <Image
+            src={article.data.cover}
+            alt={
+              article.data.covert_alt
+                ? article.data.covert_alt
+                : article.data.title
+            }
+            layout="responsive"
+            loading={"eager"}
+          />
+        </div>
+        <div class="flex flex-col gap-2">
+          <div>
+            <h2 class="text-xl font-semibold lg:group-hover:underline underline-offset-2">
+              {article.data.title}
+            </h2>
+            <p class="text-base-content/90 text-base max-w-lg">
+              {article.data.description}
+            </p>
+          </div>
+          <div class="flex items-center text-xs text-base-content/80 mt-2">
+            <span class="text-primary">{category.data.title}</span>
+            <Divider />
+            <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
+          </div>
+        </div>
+      </a>
+    )
+  }
 </article>

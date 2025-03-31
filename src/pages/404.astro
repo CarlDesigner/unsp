@@ -5,7 +5,7 @@ import BaseLayout from "../layouts/base.astro";
 const entry = await getEntry("views", "error404");
 
 if (!entry) {
-  throw new Error("404 page not found");
+  throw new Error("404 Página no encontrada");
 }
 
 const [HERO] = entry.data.blocks;
@@ -13,8 +13,8 @@ const [HERO] = entry.data.blocks;
 
 <BaseLayout entry={entry}>
   <div class="container flex flex-col items-center justify-center py-20">
-    <h1 class="text-4xl">{HERO.title}</h1>
-    <p class="mt-2">{HERO.description}</p>
+    <h1 class="text-4xl bg-gradient-to-r from-pink-500 to-rose-500">{HERO.title}</h1>
+    <p class="mt-2 bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">{HERO.description}</p>
     <a href={HERO.link_url} class="btn mt-6" aria-label="Return to Homepage"
       >{HERO.link_text}</a
     >

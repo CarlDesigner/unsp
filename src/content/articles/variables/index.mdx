@@ -1,0 +1,153 @@
+---
+isDraft: false
+isBigHeadline: false
+isSmallHeadline: true
+title: "Introducción a las Variables"
+description: "Las variables almacenan datos y permiten manipular información en un programa. Aprende cómo declararlas, sus tipos y usos. 🚀"
+cover: "./imgs/Variables.avif"
+category: programacion
+# 1 dia despues de la fecha, ejemplo. ↓ este articulo se publicará el 1 de abril y no el 2
+publishedTime: "2025-04-02T00:00:00.000Z"
+authors: ["carlos-fajardo"]
+---
+
+import Note from "../../../components/Note.astro";
+
+## Hola de nuevo!
+
+Continuemos con esta guía que te ayudará a comprender los fundamentos de la programación, en esta segunda parte, abordaremos la explicación de temas que son muy importantes para poder desarrollar la lógica de programación.
+
+<Note type="info">
+⚠️ **IMPORTANTE**: La lógica de programación se refiere a la capacidad de diseñar y entender secuencias de instrucciones que resuelven problemas. Implica el uso de técnicas y métodos para pensar de manera estructurada sobre cómo un problema puede ser descompuesto y solucionado mediante código.
+
+</Note>
+
+### Guía Básica de Variables en Programación
+
+![Imagen de variables](./imgs/Variables2.avif)
+
+
+### ¿Qué es una variable?
+
+En programación, una **variable** es como una caja que usamos para guardar información. Esa información puede cambiar a lo largo del tiempo, y podemos acceder a ella cuando la necesitemos. Es una de las bases más importantes que debes entender para aprender a programar, ya que las variables te permiten **almacenar, modificar y utilizar datos** en tus programas.
+
+### ¿Por qué son importantes las variables?
+
+Las variables son esenciales porque nos permiten **manipular datos** de manera dinámica. Sin ellas, sería muy difícil o imposible realizar tareas comunes en programación, como:
+
+- Almacenar el nombre de un usuario.
+- Guardar resultados de cálculos.
+- Seguir la puntuación de un juego.
+
+Con variables, puedes hacer que tu programa sea más flexible y adaptarse a diferentes escenarios.
+
+### Sintaxis de las Variables en JavaScript
+
+JavaScript utiliza tres palabras clave principales para declarar variables:
+
+1. `var` (antiguo, no recomendado).
+2. `let` (moderno, recomendado).
+3. `const` (para variables que no cambian).
+
+A continuación, veremos cómo se usa cada uno.
+
+### Declaración de una Variable
+
+Para declarar una variable en JavaScript, usamos la palabra clave `let` o `const`, seguida de un nombre que damos a la variable.
+
+```jsx
+let nombre;  // Declara una variable llamada 'nombre'
+nombre = 'Juan';  // Le asigna el valor 'Juan'
+```
+
+O también podemos declarar y asignar el valor en una sola línea:
+
+```jsx
+let nombre = 'Juan';  // Declara y asigna el valor 'Juan'
+```
+
+### Tipos de Datos
+
+Las variables pueden almacenar diferentes **tipos de datos**. Aquí algunos ejemplos:
+
+1. **Números (Number):**
+
+```jsx
+let edad = 25;
+```
+
+1. Cadenas de texto (String):
+
+```jsx
+let saludo = "Hola, ¿cómo estás?";
+```
+
+1. Valores booleanos (Boolean):
+
+```jsx
+let esMayorDeEdad = true;
+```
+
+### Ejemplo Práctico
+
+Imagina que estás creando un programa sencillo para saludar a un usuario dependiendo de su nombre y edad.
+
+```jsx
+let nombre = 'Carlos';  // Declaramos la variable 'nombre'
+let edad = 28;  // Declaramos la variable 'edad'
+
+if (edad >= 18) {
+  console.log(`Hola ${nombre}, eres mayor de edad.`);
+} else {
+  console.log(`Hola ${nombre}, aún no eres mayor de edad.`);
+}
+```
+
+En este ejemplo:
+
+- **`nombre`** guarda el nombre del usuario.
+- **`edad`** guarda la edad del usuario.
+- Dependiendo de si el valor de `edad` es mayor o igual a 18, mostramos un mensaje diferente.
+
+### Reglas para Nombrar Variables
+
+1. **No pueden comenzar con un número**. Correcto: `edadUsuario`; Incorrecto: `1usuario`.
+2. **No pueden tener espacios**. Usa camelCase: `nombreUsuario`.
+3. **Son sensibles a mayúsculas y minúsculas**: `edad` y `Edad` son variables diferentes.
+
+### Variables Constantes
+
+Si sabes que una variable **no debe cambiar**, usa `const`. Por ejemplo, el valor de **PI** en matemáticas:
+
+```jsx
+const PI = 3.1416;
+```
+
+Si intentas cambiar el valor de una variable declarada con `const`, obtendrás un error.
+
+### Conclusión
+
+Las variables son fundamentales en cualquier lenguaje de programación. Son como pequeños contenedores donde guardamos información que el programa necesita. Aprender a usarlas correctamente te permitirá escribir programas más dinámicos y útiles.
+
+### Ejercicio Práctico
+
+Crea un programa que almacene el nombre de un usuario y su edad. Si la edad es mayor o igual a 18, el programa debería mostrar un mensaje que diga "Bienvenido, [nombre], puedes acceder al sistema". Si es menor, debería decir "Lo siento, [nombre], no puedes acceder al sistema".
+
+```jsx
+let nombre = 'Ana';
+let edad = 16;
+
+if (edad >= 18) {
+  console.log(`Bienvenida, ${nombre}, puedes acceder al sistema.`);
+} else {
+  console.log(`Lo siento, ${nombre}, no puedes acceder al sistema.`);
+}
+```
+
+
+<Note type="motivation">
+📌 Ser autodidacta trata de aprender por cuenta propia y esa es la clave para un conocimiento profundo y personalizado, Sigue adelante, explora y nunca dejes de aprender. La independencia en el aprendizaje abre puertas inimaginables.
+
+¡Nunca dejes de aprender! 
+
+</Note>

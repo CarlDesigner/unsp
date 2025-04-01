@@ -26,6 +26,32 @@ const meta = await getMeta(entry);
     </main>
     <Footer />
     <CookieBanner />
+
+    <!-- codigo basura, remover cuando sea necesario -->
+    <script>
+			// Función para hacer scroll hasta el final del post de manera suave
+			function scrollToBottom() {
+				window.scrollTo({
+					top: document.body.scrollHeight,
+					behavior: 'smooth'
+				})
+			}
+
+			// Función para recargar la página y hacer scroll automáticamente
+			function autoRefresh() {
+				// Hace scroll hasta el final
+				scrollToBottom()
+
+				// Configura la recarga automática después de un intervalo
+				setTimeout(() => {
+					window.location.reload()
+				}, 10000) // 10000 ms = 10 segundos
+			}
+
+			// Ejecuta la función autoRefresh cuando el documento esté listo
+			document.addEventListener('DOMContentLoaded', autoRefresh)
+		</script>
+
   </body>
 </html>
 

@@ -1,0 +1,386 @@
+---
+isDraft: false
+isBigHeadline: false
+isSmallHeadline: true
+title: "Tipos de Datos en Programación"
+description: "Aprende los tipos de datos básicos en programación y cómo te ayudan a construir programas más eficientes."
+cover: "./imgs/Tiposdedatos.avif"
+category: programacion
+publishedTime: "2025-04-08T12:00:00.000Z"
+authors: ["carlos-fajardo"]
+---
+
+## Tipos de Datos en Programación
+
+### ¿Qué son los Tipos de Datos?
+
+Los **tipos de datos** determinan qué tipo de valor puede almacenar una **variable** y cómo se puede manipular ese valor. En cualquier lenguaje de programación, incluyendo **JavaScript**, los tipos de datos son fundamentales para que el programa funcione correctamente y puedas realizar cálculos, operaciones lógicas, manipulación de texto, entre otras cosas.
+
+### ¿Por qué son importantes los Tipos de Datos?
+
+Comprender los tipos de datos es esencial para evitar errores en tu código y hacer que tu programa se comporte como esperas. Si no sabes qué tipo de dato estás manejando, podrías intentar realizar operaciones que no son válidas y terminar con errores inesperados.
+
+Por ejemplo, intentar sumar un **número** con un **texto** puede llevar a resultados confusos si no comprendes cómo tu lenguaje de programación interpreta esos datos. Por eso, al aprender a programar, es importante que entiendas los **tipos de datos** y cómo usarlos correctamente.
+
+## Tipos de Datos en JavaScript
+
+A continuación, veremos los **tipos de datos básicos** que existen en JavaScript y cómo puedes utilizarlos en tus programas.
+
+### 1. **Números (`number`)**
+
+En JavaScript, los números se representan usando el tipo `number`. Pueden ser **enteros** (números sin decimales) o **flotantes** (números con decimales).
+
+```jsx
+let entero = 10; // Número entero
+let flotante = 3.14; // Número con decimales
+console.log(entero); // Imprime: 10
+console.log(flotante); // Imprime: 3.14
+```
+
+Puedes realizar operaciones matemáticas como suma, resta, multiplicación y división:
+
+```jsx
+let a = 5;
+let b = 2;
+console.log(a + b); // Imprime: 7
+console.log(a - b); // Imprime: 3
+console.log(a * b); // Imprime: 10
+console.log(a / b); // Imprime: 2.5
+```
+
+### 2. **Cadenas de Texto (`string`)**
+
+Las **cadenas de texto** (strings) se utilizan para representar texto. En JavaScript, puedes definir una cadena utilizando comillas simples (`'...'`), comillas dobles (`"..."`), o backticks (``...``).
+
+```jsx
+let saludo = "Hola, Mundo!";
+let nombre = 'Juan';
+let mensaje = Bienvenido, ${nombre}!; // Utilizando backticks para interpolación
+console.log(saludo); // Imprime: Hola, Mundo!
+console.log(mensaje); // Imprime: Bienvenido, Juan!
+```
+
+### Operaciones con cadenas:
+
+Puedes concatenar cadenas usando el operador `+`:
+
+```jsx
+let parte1 = "Hola";
+let parte2 = "Mundo";
+console.log(parte1 + " " + parte2); // Imprime: Hola Mundo
+```
+
+### 3. **Booleanos (`boolean`)**
+
+Un valor **booleano** solo puede ser `true` (verdadero) o `false` (falso). Se utilizan en **condiciones** y **estructuras de control** para tomar decisiones en tu programa.
+
+```jsx
+let esMayorDeEdad = true;
+let estaLloviendo = false;
+console.log(esMayorDeEdad); // Imprime: true
+console.log(estaLloviendo); // Imprime: false
+```
+
+Ejemplo de uso en una condición:
+
+```jsx
+let edad = 18;
+if (edad >= 18) {
+console.log("Eres mayor de edad");
+} else {
+console.log("Eres menor de edad");
+}
+```
+
+### 4. **Indefinido (`undefined`)**
+
+Una variable tiene el valor `undefined` cuando no se le ha asignado ningún valor.
+
+```jsx
+let variableNoDefinida;
+console.log(variableNoDefinida); // Imprime: undefined
+```
+
+### 5. **Nulo (`null`)**
+
+`null` es un valor especial que representa la **ausencia intencional de un valor**. Es similar a `undefined`, pero `null` se usa para indicar que **deliberadamente** no hay un valor.
+
+```jsx
+let sinValor = null;
+console.log(sinValor); // Imprime: null
+```
+
+### 6. **Arreglos (`array`)**
+
+Un **arreglo** (array) es una lista ordenada de valores. Puedes almacenar múltiples valores en una sola variable.
+
+```jsx
+let numeros = [1, 2, 3, 4, 5];
+let frutas = ["Manzana", "Banana", "Naranja"];
+console.log(numeros[0]); // Imprime: 1
+console.log(frutas[2]); // Imprime: Naranja
+```
+
+Agregar un nuevo elemento al arreglo:
+
+```jsx
+numeros.push(6);
+console.log(numeros); // Imprime: [1, 2, 3, 4, 5, 6]
+```
+
+### 7. **Objetos (`object`)**
+
+Los **objetos** son colecciones de pares clave-valor que te permiten estructurar datos más complejos.
+
+```jsx
+let persona = {
+nombre: "Carlos",
+edad: 30,
+esEstudiante: true
+};
+console.log(persona.nombre); // Imprime: Carlos
+console.log(persona["edad"]); // Imprime: 30
+```
+
+Acceder y modificar propiedades:
+
+```jsx
+persona.edad = 31;
+console.log(persona.edad); // Imprime: 31
+```
+
+## Ejemplo Práctico: Combinando Tipos de Datos
+
+Imaginemos que queremos calcular el precio total de una compra y mostrar un mensaje personalizado al usuario:
+
+```jsx
+let nombreUsuario = "Ana";
+let precioProducto = 150.50;
+let cantidad = 3;
+let total = precioProducto * cantidad;
+
+console.log(Hola, ${nombreUsuario}. El total de tu compra es: $${total}.);
+// Imprime: Hola, Ana. El total de tu compra es: $451.5.
+```
+
+## Ejercicio Básico: Cálculo del Total de una Compra
+
+### **Descripción del Ejercicio**
+
+Imaginemos que tenemos una tienda en línea donde vendemos camisetas. Queremos crear un programa que:
+
+1. Defina una **variable** para almacenar el **precio** de una camiseta.
+2. Defina otra **variable** para almacenar la **cantidad** de camisetas que el cliente quiere comprar.
+3. Calcule el **total a pagar** multiplicando el precio por la cantidad.
+4. Muestre el resultado al usuario.
+
+En este ejercicio, usaremos **números** (`number`) y **cadenas de texto** (`string`) para trabajar con datos simples.
+
+### **Paso 1: Definir las Variables**
+
+Primero, definimos dos variables:
+
+- `precioCamiseta`: el precio de una camiseta.
+- `cantidad`: la cantidad de camisetas que el cliente quiere comprar.
+
+```jsx
+let precioCamiseta = 20; // El precio de una camiseta en dólares
+let cantidad = 3; // Cantidad de camisetas que quiere comprar el cliente
+```
+
+### **Paso 2: Calcular el Total**
+
+Ahora, vamos a calcular el **total a pagar** multiplicando el precio por la cantidad.
+
+```jsx
+let total = precioCamiseta * cantidad; // Calcula el total
+```
+
+### **Paso 3: Mostrar el Resultado**
+
+Usaremos `console.log` para mostrar el total al usuario.
+
+```jsx
+console.log("El precio de una camiseta es $" + precioCamiseta);
+console.log("Has comprado " + cantidad + " camisetas");
+console.log("El total a pagar es $" + total);
+```
+
+### **Código Completo**
+
+Aquí tienes el código completo para este ejercicio:
+
+```jsx
+let precioCamiseta = 20; // Precio de una camiseta
+let cantidad = 3; // Cantidad de camisetas que el cliente quiere comprar
+
+// Calcular el total
+let total = precioCamiseta * cantidad;
+
+// Mostrar el resultado al usuario
+console.log("El precio de una camiseta es $" + precioCamiseta);
+console.log("Has comprado " + cantidad + " camisetas");
+console.log("El total a pagar es $" + total);
+```
+
+### **Salida esperada**
+
+Al ejecutar el código, obtendrás algo como esto:
+
+```jsx
+El precio de una camiseta es $20
+Has comprado 3 camisetas
+El total a pagar es $60
+```
+
+### **Explicación**
+
+1. **Definimos variables** para almacenar el precio y la cantidad.
+2. **Calculamos el total** usando una multiplicación.
+3. Usamos `console.log` para **mostrar mensajes** al usuario.
+
+### **Tarea Adicional**
+
+Puedes probar cambiando los valores de `precioCamiseta` y `cantidad` para ver cómo cambia el total. También puedes experimentar con otros tipos de productos o agregar un descuento si el cliente compra más de 5 camisetas.
+
+¡Practicar y jugar con estos conceptos te ayudará a sentirte más cómodo programando! 🚀
+
+### Quieres un reto un poco mas complejo? 😎  vamos!
+
+### Gestión de una Tienda Online
+
+En este ejercicio, vamos a usar **diferentes tipos de datos** que hemos aprendido para simular un programa que gestiona los productos y las compras en una tienda en línea.
+
+### **Descripción del Ejercicio**
+
+Vamos a crear un programa que haga lo siguiente:
+
+1. Definir un **objeto** para representar un producto en la tienda.
+2. Calcular el **total a pagar** basado en la cantidad de productos que el usuario quiere comprar.
+3. Mostrar un **mensaje personalizado** al usuario con el total de la compra.
+
+Usaremos **números**, **cadenas de texto**, **booleanos**, **arreglos** y **objetos** para resolver este ejercicio.
+
+### **Paso 1: Crear un Objeto Producto**
+
+Primero, crearemos un **objeto** que represente un producto con las siguientes propiedades:
+
+- `nombre`: (string) el nombre del producto.
+- `precio`: (number) el precio por unidad del producto.
+- `disponible`: (boolean) indica si el producto está en stock.
+
+```jsx
+// Definir un producto
+let producto = {
+nombre: "Auriculares Inalámbricos",
+precio: 75.99,
+disponible: true
+};
+
+// Mostrar información del producto
+console.log(Producto: ${producto.nombre});
+console.log(Precio: $${producto.precio});
+console.log(¿Está disponible? ${producto.disponible ? "Sí" : "No"});
+```
+
+### **Paso 2: Calcular el Total Basado en la Cantidad**
+
+Ahora pediremos al usuario la cantidad de productos que quiere comprar y calcularemos el **total a pagar**.
+
+- Si el producto no está disponible (`disponible` es `false`), mostraremos un mensaje indicando que no hay stock.
+- Si está disponible, calcularemos el total multiplicando el precio por la cantidad.
+
+```jsx
+// Cantidad deseada por el usuario
+let cantidad = 3;
+
+// Verificar si el producto está disponible
+if (producto.disponible) {
+// Calcular el total
+let total = producto.precio * cantidad;
+console.log(El total por ${cantidad} unidades de ${producto.nombre} es: $${total});
+} else {
+console.log("Lo sentimos, el producto no está disponible.");
+}
+```
+
+### **Paso 3: Almacenar el Pedido en un Arreglo**
+
+Finalmente, almacenaremos la información del pedido en un **arreglo** para poder gestionar múltiples pedidos en el futuro.
+
+```jsx
+// Crear un arreglo para almacenar los pedidos
+let pedidos = [];
+
+// Función para añadir un pedido al arreglo
+function agregarPedido(nombreCliente, producto, cantidad) {
+let pedido = {
+cliente: nombreCliente,
+producto: producto.nombre,
+cantidad: cantidad,
+total: producto.precio * cantidad
+};
+pedidos.push(pedido);
+}
+
+// Agregar un pedido al arreglo
+agregarPedido("Ana", producto, cantidad);
+
+// Mostrar todos los pedidos realizados
+console.log("Lista de pedidos:");
+console.log(pedidos);
+```
+
+### **Salida esperada del programa**
+
+Al ejecutar el programa, obtendremos un resultado similar al siguiente:
+
+```jsx
+Producto: Auriculares Inalámbricos
+Precio: $75.99
+¿Está disponible? Sí
+El total por 3 unidades de Auriculares Inalámbricos es: $227.97
+Lista de pedidos:
+[
+{
+cliente: 'Ana',
+producto: 'Auriculares Inalámbricos',
+cantidad: 3,
+total: 227.97
+}
+]
+```
+
+### **Explicación del Código**
+
+- Creamos un **objeto** que contiene la información de un producto.
+- Utilizamos una **condición** (`if`) para verificar si el producto está disponible.
+- Calculamos el **total** a pagar si el producto está en stock.
+- Utilizamos un **arreglo** para almacenar los pedidos realizados.
+- Definimos una **función** para agregar nuevos pedidos al arreglo.
+
+### **Tarea Adicional**
+
+Como práctica adicional, puedes **mejorar** este programa para que:
+
+1. Permita **introducir la cantidad** de productos a comprar mediante la función `prompt()` (en entornos que lo soporten).
+2. Agregue la opción de **varios productos** con distintos precios.
+3. Muestre un **resumen** del total a pagar por varios productos al final.
+
+¡Diviértete practicando y experimentando con el código! 🚀
+
+## Resumen y Conclusión
+
+En esta guía, hemos cubierto los principales tipos de datos en JavaScript:
+
+- **Números** (`number`)
+- **Cadenas de texto** (`string`)
+- **Booleanos** (`boolean`)
+- **Indefinido** (`undefined`)
+- **Nulo** (`null`)
+- **Arreglos** (`array`)
+- **Objetos** (`object`)
+
+Conocer y comprender los tipos de datos es esencial para programar de manera efectiva, ya que te ayuda a prevenir errores y entender cómo funciona tu programa. A medida que avances en tu aprendizaje, verás cómo estos conceptos son la base para trabajar con estructuras más complejas.
+
+¡Ahora es tu turno de practicar!

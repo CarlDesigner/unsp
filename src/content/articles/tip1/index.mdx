@@ -1,0 +1,67 @@
+---
+isDraft: false
+isBigHeadline: false
+isSmallHeadline: true
+title: "Elimina y Mueve Archivos con CMD de Forma Eficiente"
+description: "Tip: Cómo eliminar audios y videos del disco y mover documentos a una USB usando la CMD."
+cover: "./imgs/Tip1.avif"
+category: tips
+publishedTime: "2025-04-05T12:00:00.000Z"
+authors: ["carlos-fajardo"]
+---
+
+## Tip: Cómo eliminar audios y videos del disco y mover documentos a una USB usando la CMD
+
+Si tienes tu pc o un disco lleno de audios y videos que quieres eliminar, pero no quieres ir de carpeta en carpeta buscando esos archivos, la **CMD de Windows** puede ayudarte a hacerlo de manera rápida y eficiente. Además, si necesitas mover tus documentos importantes, como PDFs y archivos Word, a una USB, también puedes lograrlo con un simple comando. Aquí te explico cómo:
+
+---
+
+### 1. **Eliminar audios y videos del disco**
+
+Para borrar todos los archivos de audio y video de un disco (por ejemplo, **D:**), usa este comando:
+
+```powershell
+del /s /q D:\*.mp3 D:\*.wav D:\*.aac D:\*.flac D:\*.mp4 D:\*.mkv D:\*.avi D:\*.mov D:\*.wmv D:\*.flv
+```
+
+- **Qué hace:**
+    - Elimina automáticamente archivos de audio y video de todas las carpetas y subcarpetas del disco **D:**.
+    - Lo hace de forma silenciosa (`/q`) y recorre subcarpetas (`/s`).
+
+💡 *Nota: Este método elimina los archivos de manera permanente, no van a la papelera de reciclaje.*
+
+---
+
+### 2. **Mover documentos PDF y Word a una USB**
+
+Si tienes una USB conectada (por ejemplo, en **E:**), este comando moverá todos los documentos PDF y Word desde el disco **D:** a la USB:
+
+```powershell
+move /y D:\*.pdf D:\*.docx D:\*.doc E:\
+```
+
+- **Qué hace:**
+    - Busca documentos PDF y Word en el disco **D:** y los mueve a la unidad USB **E:**.
+    - Sobrescribe archivos automáticamente (`/y`).
+
+Si necesitas mover archivos desde subcarpetas también, utiliza este comando:
+
+```powershell
+for /r D:\ %f in (*.pdf *.docx *.doc) do move /y "%f" E:\
+```
+
+---
+
+### 3. **Pro-tip: Probar antes de ejecutar**
+
+¿Quieres asegurarte de qué archivos se verán afectados antes de eliminarlos o moverlos? Usa el comando `dir` para listar los archivos:
+
+```powershell
+dir /s D:\*.mp3 D:\*.mp4
+```
+
+Esto te mostrará los archivos encontrados sin modificarlos.
+
+---
+
+Con estos comandos, puedes organizar tus archivos fácilmente, ahorrar tiempo y liberar espacio en tu disco sin tener que hacerlo manualmente carpeta por carpeta. 💻✨

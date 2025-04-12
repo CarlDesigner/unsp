@@ -3,4 +3,24 @@
   data-pagefind-body
 >
   <slot />
+  <button
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    class="fixed bottom-5 right-5 p-2 bg-white text-gray-800 border border-gray-300 rounded-full shadow-sm hover:bg-gray-100 transition"
+    aria-label="Volver arriba"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="none"
+    >
+      <path
+        d="M18 15C18 15 13.581 9 12 9C10.419 9 6 15 6 15"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
 </article>

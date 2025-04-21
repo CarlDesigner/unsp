@@ -32,3 +32,5 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response("Error interno", { status: 500 });
   }
 };
+
+//ToDo. Escribir query para leer los datos en la consola de firebase en orden ascendente o de llegada

@@ -1,0 +1,218 @@
+---
+isDraft: false
+isBigHeadline: false
+isSmallHeadline: true
+title: "Estructuras de Control"
+description: "Conoce cómo las estructuras de control guían la lógica y el flujo en la programación."
+cover: "./imgs/Estructuras.avif"
+category: programacion
+publishedTime: "2025-04-16T12:00:00.000Z"
+authors: ["carlos-fajardo"]
+---
+
+### Guía para Principiantes: **Estructuras de Control en Programación**
+
+Las **estructuras de control** son un concepto fundamental en programación. Estas permiten tomar decisiones, repetir acciones y controlar el flujo de ejecución de un programa. Entenderlas te dará la base para construir programas que puedan responder a condiciones y manejar procesos repetitivos.
+
+---
+
+### **¿Qué son las Estructuras de Control?**
+
+Las estructuras de control son **bloques de código que definen el comportamiento de un programa en función de ciertas condiciones o repeticiones**. Son como señales de tráfico que dicen al programa qué camino tomar o cuándo detenerse.
+
+Se dividen en tres categorías principales:
+
+1. **Condicionales**: Permiten tomar decisiones basadas en condiciones.
+2. **Repetitivas**: Permiten repetir acciones un número específico de veces o mientras se cumpla una condición.
+3. **Selección múltiple**: Manejan múltiples posibles caminos.
+
+---
+
+### **¿Por qué son importantes?**
+
+1. **Toman decisiones**: Sin estructuras de control, un programa solo haría lo mismo cada vez que se ejecuta.
+2. **Automatizan tareas**: Pueden ejecutar acciones repetitivas sin necesidad de intervención manual.
+3. **Hacen los programas interactivos**: Permiten responder a entradas del usuario o eventos externos.
+4. **Son la base de la lógica de programación**: Sin ellas, no podríamos resolver problemas complejos.
+
+---
+
+### **Condicionales**
+
+### **if**
+
+La estructura `if` permite ejecutar un bloque de código si se cumple una condición.
+
+```jsx
+const edad = 18;
+
+if (edad >= 18) {
+  console.log("Eres mayor de edad.");
+}
+
+```
+
+**Explicación**:
+
+- Si la condición `edad >= 18` es verdadera, el código dentro del bloque `if` se ejecuta.
+
+---
+
+### **if...else**
+
+Esta variante permite ejecutar un bloque alternativo si la condición no se cumple.
+
+```jsx
+const edad = 16;
+
+if (edad >= 18) {
+  console.log("Eres mayor de edad.");
+} else {
+  console.log("Eres menor de edad.");
+}
+
+```
+
+**Explicación**:
+
+- Si la condición es falsa, se ejecuta el bloque después de `else`.
+
+---
+
+### **if...else if...else**
+
+Permite evaluar múltiples condiciones.
+
+```jsx
+const temperatura = 30;
+
+if (temperatura > 35) {
+  console.log("Hace mucho calor.");
+} else if (temperatura >= 25) {
+  console.log("El clima es cálido.");
+} else {
+  console.log("Hace frío.");
+}
+
+```
+
+**Explicación**:
+
+- Evalúa las condiciones en orden. El primer bloque cuyo `if` o `else if` sea verdadero se ejecuta.
+
+---
+
+### **Repetitivas**
+
+### **for**
+
+El bucle `for` se usa para ejecutar un bloque de código un número específico de veces.
+
+```jsx
+for (let i = 1; i <= 5; i++) {
+  console.log(`Número: ${i}`);
+}
+
+```
+
+**Explicación**:
+
+- `i` comienza en 1.
+- El bucle se ejecuta mientras `i <= 5`.
+- Incrementa `i` en 1 después de cada iteración.
+
+---
+
+### **while**
+
+El bucle `while` repite un bloque de código mientras una condición sea verdadera.
+
+```jsx
+et contador = 1;
+
+while (contador <= 5) {
+  console.log(`Contando: ${contador}`);
+  contador++;
+}
+
+```
+
+**Explicación**:
+
+- El bucle verifica la condición antes de cada iteración.
+
+---
+
+### **do...while**
+
+El bucle `do...while` garantiza que el bloque de código se ejecute **al menos una vez**, incluso si la condición es falsa.
+
+```jsx
+let numero = 1;
+
+do {
+  console.log(`Número actual: ${numero}`);
+  numero++;
+} while (numero <= 5);
+
+```
+
+**Explicación**:
+
+- La condición se evalúa al final, después de ejecutar el bloque.
+
+---
+
+### **Selección Múltiple**
+
+### **switch**
+
+La estructura `switch` permite manejar múltiples casos posibles.
+
+```jsx
+const dia = 3;
+
+switch (dia) {
+  case 1:
+    console.log("Lunes");
+    break;
+  case 2:
+    console.log("Martes");
+    break;
+  case 3:
+    console.log("Miércoles");
+    break;
+  default:
+    console.log("Día no válido.");
+}
+
+```
+
+**Explicación**:
+
+- Evalúa el valor de `dia` y ejecuta el caso correspondiente.
+- `break` asegura que el programa no siga ejecutando otros casos.
+
+---
+
+### **Ejercicio Práctico**
+
+**Problema**: Escribe un programa que pregunte al usuario su nombre y cuente cuántas letras tiene.
+
+```jsx
+const nombre = prompt("¿Cómo te llamas?");
+console.log(`Hola, ${nombre}. Tu nombre tiene ${nombre.length} letras.`);
+```
+
+**Tareas adicionales**:
+
+1. Agrega una condición con `if` para verificar si el nombre es muy corto o largo.
+2. Usa un bucle `while` para pedir nombres repetidamente hasta que el usuario escriba "salir".
+
+---
+
+### **Conclusión**
+
+Las estructuras de control son esenciales porque convierten un código rígido en un programa dinámico y funcional. Dominar estas estructuras te permitirá resolver problemas, crear aplicaciones interactivas y sentar las bases para aprender programación avanzada.
+
+**Practica estos ejemplos y experimenta con tus propias ideas. ¡La práctica hace al maestro!**

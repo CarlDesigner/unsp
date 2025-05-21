@@ -1,0 +1,237 @@
+---
+isDraft: false
+isBigHeadline: true
+isSmallHeadline: true
+title: "Funciones en Programación"
+description: "Descubre qué son las funciones en programación, cómo usarlas en JavaScript y por qué son clave para escribir código limpio, reutilizable y organizado"
+cover: "./imgs/Funciones.avif"
+category: programacion
+publishedTime: "2025-04-23T12:00:00.000Z"
+authors: ["carlos-fajardo"]
+---
+
+## Guía para principiantes: **Funciones en Programación**
+
+### ¿Qué es una función?
+
+Una **función** es un bloque de código que realiza una tarea específica y puede ser reutilizado varias veces dentro de un programa. Las funciones nos ayudan a organizar el código y evitar la duplicación, haciéndolo más limpio, fácil de entender y de mantener.
+
+En términos simples, una función es como una **receta**: tiene instrucciones claras sobre qué hacer y puede ser reutilizada cada vez que necesites esos pasos.
+
+---
+
+### Ventajas de las funciones
+
+1. **Reutilización de código**: Puedes escribir una vez la función y usarla muchas veces.
+2. **Modularidad**: Divide tu programa en partes pequeñas y manejables.
+3. **Legibilidad**: El código es más fácil de leer y entender.
+4. **Mantenimiento**: Si necesitas cambiar algo, solo modificas la función, no cada lugar donde se usa.
+
+---
+
+### ¿Cómo se escribe una función en JavaScript?
+
+Una función tiene tres partes principales:
+
+1. **Definición**: Donde creas la función.
+2. **Llamado**: Donde usas la función.
+3. **Parámetros y retorno** (opcional): Datos que la función recibe y devuelve.
+
+### Sintaxis básica
+
+```jsx
+
+function nombreDeLaFuncion() {
+  // Código que realiza la tarea
+}
+
+```
+
+### Ejemplo básico: Saludar
+
+```jsx
+
+// Definir la función
+function saludar() {
+  console.log("¡Hola, mundo!");
+}
+
+// Llamar a la función
+saludar(); // Salida: ¡Hola, mundo!
+
+```
+
+---
+
+### Parámetros en funciones
+
+Los **parámetros** son valores que le pasas a una función para que los use. Piensa en ellos como ingredientes que pasas a la receta.
+
+### Ejemplo: Saludar a alguien
+
+```jsx
+
+// Función con un parámetro
+function saludar(nombre) {
+  console.log(`¡Hola, ${nombre}!`);
+}
+
+// Llamar a la función con diferentes valores
+saludar("Ana"); // Salida: ¡Hola, Ana!
+saludar("Carlos"); // Salida: ¡Hola, Carlos!
+
+```
+
+---
+
+### Retornar valores desde una función
+
+Una función puede **devolver** un valor usando la palabra clave `return`. Esto es útil cuando necesitas usar el resultado en otra parte del programa.
+
+### Ejemplo: Sumar dos números
+
+```jsx
+
+// Función que retorna la suma de dos números
+function sumar(a, b) {
+  return a + b;
+}
+
+// Guardar el resultado de la función
+let resultado = sumar(5, 3);
+console.log(`El resultado es: ${resultado}`); // Salida: El resultado es: 8
+
+```
+
+---
+
+### Funciones con múltiples tareas
+
+Las funciones pueden realizar cálculos más complejos o combinar varias tareas.
+
+### Ejemplo: Calcular el área de un rectángulo
+
+```jsx
+
+function calcularArea(base, altura) {
+  return base * altura;
+}
+
+let area = calcularArea(5, 10);
+console.log(`El área del rectángulo es: ${area}`); // Salida: El área del rectángulo es: 50
+
+```
+
+---
+
+### Funciones y su importancia
+
+1. **Estructura y organización**: Ayudan a descomponer problemas complejos en partes más pequeñas.
+2. **Eficiencia**: Reducen la repetición del código.
+3. **Escalabilidad**: Hacen que el código sea más fácil de modificar y ampliar.
+
+---
+
+### Buenas prácticas al usar funciones
+
+1. **Usa nombres descriptivos**: El nombre de la función debe indicar claramente qué hace.
+    - Ejemplo: `calcularPromedio`, `enviarCorreo`, `convertirMoneda`.
+2. **Mantén las funciones simples**: Cada función debe realizar una sola tarea específica.
+3. **Evita funciones demasiado largas**: Si una función se vuelve complicada, divídela en partes más pequeñas.
+
+---
+
+### Ejercicio práctico
+
+Vamos a escribir una función que tome una lista de números y devuelva el número más grande.
+
+```jsx
+
+function encontrarMayor(lista) {
+  let mayor = lista[0]; // Inicializar con el primer número
+
+  for (let i = 1; i < lista.length; i++) {
+    if (lista[i] > mayor) {
+      mayor = lista[i];
+    }
+  }
+
+  return mayor;
+}
+
+// Usar la función
+let numeros = [3, 7, 2, 8, 4];
+console.log(`El número más grande es: ${encontrarMayor(numeros)}`); // Salida: El número más grande es: 8
+
+```
+
+---
+
+*Ahora realiza tu los siguientes ejercicios*
+
+### Ejercicio 1: Calculadora básica
+
+Escribe una función llamada `calculadora` que reciba tres parámetros: dos números (`a` y `b`) y una operación (`operacion`). La función debe realizar la operación indicada y devolver el resultado. Las operaciones válidas son:
+
+- `"suma"`: suma los dos números.
+- `"resta"`: resta el segundo número del primero.
+- `"multiplicacion"`: multiplica los dos números.
+- `"division"`: divide el primer número entre el segundo.
+
+**Ejemplo de uso:**
+
+```jsx
+console.log(calculadora(10, 5, "suma")); // Salida: 15
+console.log(calculadora(10, 5, "resta")); // Salida: 5
+console.log(calculadora(10, 5, "multiplicacion")); // Salida: 50
+console.log(calculadora(10, 5, "division")); // Salida: 2
+
+```
+
+**Pista:** Usa una estructura `if` o `switch` para determinar qué operación realizar.
+
+---
+
+### Ejercicio 2: Contador de vocales
+
+Escribe una función llamada `contarVocales` que reciba una cadena de texto como parámetro y devuelva la cantidad de vocales (`a`, `e`, `i`, `o`, `u`) que contiene.
+
+**Ejemplo de uso:**
+
+```jsx
+
+console.log(contarVocales("programacion")); // Salida: 5
+console.log(contarVocales("Hola Mundo"));   // Salida: 4
+
+```
+
+**Pista:**
+
+- Convierte la cadena a minúsculas usando `.toLowerCase()`.
+- Usa un bucle para recorrer la cadena.
+- Comprueba si cada carácter es una vocal usando un condicional.
+
+### **Resultado final**
+
+```jsx
+function contarVocales(texto) {
+  texto = texto.toLowerCase();
+  let contador = 0;
+
+  for (let i = 0; i < texto.length; i++) {
+    if ("aeiou".includes(texto[i])) {
+      contador++;
+    }
+  }
+
+  return contador;
+}
+
+console.log(contarVocales("programacion")); // Salida: 5
+console.log(contarVocales("Hola Mundo"));   // Salida: 4
+
+```
+
+### Conclusión
+
+Aprender funciones es fundamental para entender cómo organizar el código en cualquier lenguaje de programación. Te permitirá escribir programas más claros, eficaces y fáciles de mantener. ¡Practica mucho y verás cómo empiezas a resolver problemas de forma más estructurada!

@@ -66,9 +66,9 @@ const [HEADER] = entry.data.blocks;
     length={page.lastPage}
     currentUrl={page.url.current}
     currentPage={page.currentPage}
-    firstUrl={`/${firstPath}`}
+    firstUrl={`/authors/${params.id}`}
     prevUrl={page.url.prev}
     nextUrl={page.url.next}
-    lastUrl={`/${firstPath}/${page.lastPage}`}
+    lastUrl={`/authors/${params.id}/${page.lastPage}`}
   />
 </ListLayout>

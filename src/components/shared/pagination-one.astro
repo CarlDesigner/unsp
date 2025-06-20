@@ -67,7 +67,7 @@ const paginationList = Array.from(
     {
       paginationList.map((num) => (
         <a
-          href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
+          href={`${firstUrl}/${num}`}
           class={`join-item btn btn-sm ${currentPage == num ? "btn-active pointer-events-none" : ""}`}
         >
           {num}
